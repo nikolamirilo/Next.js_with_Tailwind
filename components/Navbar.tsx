@@ -1,10 +1,12 @@
 "use client";
 import React, { useState } from "react";
+import { AiOutlineMenu } from "react-icons/ai";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <nav className="w-full fixed top-0 bg-green-600">
+    <nav className="w-full fixed top-0 bg-green-600 py-4 lg:p-0 flex items-center z-50">
       <div className="container mx-auto px-6 flex items-center justify-between">
         <div className="flex items-center" aria-label="Home" role="img">
           <img
@@ -12,9 +14,9 @@ const Navbar = () => {
             src="https://tuk-cdn.s3.amazonaws.com/can-uploader/center_aligned_with_image-svg1.svg"
             alt="logo"
           />
-          <p className="ml-2 lg:ml-4 text-base lg:text-2xl font-bold text-white dark:text-white">
-            Fazon
-          </p>
+          <h2 className="ml-2 lg:ml-4 text-2xl font-bold text-white dark:text-white">
+            Projekat "Fazon"
+          </h2>
         </div>
         <div>
           <button
@@ -23,11 +25,7 @@ const Navbar = () => {
             }}
             className="dark:bg-white rounded sm:block md:hidden lg:hidden text-gray-500 hover:text-gray-700 focus:decoration-underline"
           >
-            <img
-              className="h-8 w-8"
-              src="https://tuk-cdn.s3.amazonaws.com/can-uploader/center_aligned_with_image-svg4.svg"
-              alt="show"
-            />
+            <AiOutlineMenu size={35} className="text-white" />
           </button>
           <div
             id="menu"
