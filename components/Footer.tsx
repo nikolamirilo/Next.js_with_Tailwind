@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { AiFillFacebook, AiFillInstagram, AiFillMessage } from "react-icons/ai";
@@ -10,16 +11,17 @@ const Footer = () => {
     >
       <div
         id="main-info"
-        className="flex flex-row gap-4 justify-around items-center mb-4"
+        className="flex flex-row gap-4 justify-between items-center mb-4"
       >
+        <Image
+          src="https://tuk-cdn.s3.amazonaws.com/can-uploader/center_aligned_with_image-svg1.svg"
+          alt="logo"
+          width={70}
+          height={50}
+        />
         <h2 className="text-white text-2xl font-bold">
           Projekat &quot;Fazon&quot;
         </h2>
-        <img
-          className="cursor-pointer w-8 sm:w-auto"
-          src="https://tuk-cdn.s3.amazonaws.com/can-uploader/center_aligned_with_image-svg1.svg"
-          alt="logo"
-        />
       </div>
       <div className="flex flex-col items-center justify-center gap-6">
         <div

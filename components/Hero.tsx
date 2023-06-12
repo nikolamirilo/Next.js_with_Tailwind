@@ -33,10 +33,10 @@ const Hero = () => {
     //   </div>
     // </div>
     <section
-      className="text-white bg-cover bg-center"
+      className="text-white bg-cover bg-center h-screen flex flex-col justify-center items-center"
       style={{ backgroundImage: `url(${background.src})` }}
     >
-      <div className="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:h-screen lg:items-center">
+      <div className="mx-auto max-w-screen-xl px-4 lg:flex lg:h-screen lg:items-center">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="bg-gradient-to-r from-green-500 via-green-600 to-orange-500 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl">
             Understand User Flow.
