@@ -10,6 +10,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors:{
+        green:{
+          600: "#009933"
+        }
+      },
       backgroundSize: {
         'auto': 'auto',
         'cover': 'cover',

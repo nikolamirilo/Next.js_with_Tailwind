@@ -15,7 +15,7 @@ const Partners = () => {
   }, [index]);
   return (
     <div
-      id="partners"
+      id="partneri"
       className="flex flex-col py-20 px-0 gap-5 justify-center items-center md:w-full"
     >
       <h1 className="text-5xl">Naši Partneri</h1>
@@ -42,7 +42,7 @@ const Partners = () => {
         />
         <div
           id="right-arrow"
-          className="absolute z-10 right-0 text-green-500 cursor-pointer top-4/10"
+          className="absolute z-10 right-0 text-green-600 cursor-pointer top-4/10"
         >
           <BsArrowRightCircleFill
             size={35}

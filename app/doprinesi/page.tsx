@@ -1,6 +1,7 @@
 "use client";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import Image from "next/image";
 import React from "react";
 
 const Contribute = () => {
@@ -9,18 +10,20 @@ const Contribute = () => {
   };
 
   return (
-    <>
-      <Navbar />
+    <div className="flex flex-col gap-32">
+      <Navbar type="contribute" />
       <div
         id="contribute"
-        className="flex justify-center px-0 sm:px-16 lg:px-52 pb-8"
+        className="flex justify-center px-2 sm:px-16 lg:px-52 pb-8"
       >
-        <div className="w-full max-w-xl mt-12 block rounded-lg sm:p-4 lg:p-16 bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+        <div className="w-full max-w-xl mt-12 block rounded-lg px-4 py-16 sm:p-4 lg:p-16 border-2 border-green-600 bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
           <div className="text-center">
-            <img
-              className="mx-auto h-10 w-auto"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+            <Image
+              className="mx-auto"
+              src="https://png.pngtree.com/png-vector/20191005/ourmid/pngtree-mint-leaves-graphic-design-template-vector-isolated-png-image_1795026.jpg"
               alt="Your Company"
+              width={100}
+              height={100}
             />
             <h2 className="mt-6 text-2xl font-bold text-gray-900">
               Doprinesi našoj akciji
@@ -102,6 +105,25 @@ const Contribute = () => {
             </div>
             <div>
               <label
+                htmlFor="category"
+                className="block text-sm font-medium leading-5 text-gray-700"
+              >
+                Odaberite kategoriju:
+              </label>
+              <div className="mt-1">
+                <select
+                  id="category"
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-green-600 focus:border-green-600 sm:text-sm"
+                  placeholder="Write your thoughts here..."
+                >
+                  <option value="Hidroekologija">Hidroekologija</option>
+                  <option value="Otpad">Otpad</option>
+                  <option value="Zagađenost">Zagađenost</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label
                 htmlFor="image-upload"
                 className="block text-sm font-medium leading-5 text-gray-700"
               >
@@ -153,7 +175,7 @@ const Contribute = () => {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 

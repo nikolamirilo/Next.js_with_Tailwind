@@ -9,8 +9,8 @@ import Navbar from "@/components/Navbar";
 
 const Home: React.FC = () => {
   return (
-    <div className="home">
-      <Navbar />
+    <div className="flex flex-col gap-32">
+      <Navbar type="home" />
       <Hero />
       <About />
       <div className="bg-white" id="akcije">
@@ -25,6 +25,7 @@ const Home: React.FC = () => {
                       title={item.title}
                       description={item.description}
                       image={item.image}
+                      category={item.category}
                     />
                   );
                 })

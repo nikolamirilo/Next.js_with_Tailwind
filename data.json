@@ -2,46 +2,56 @@
     {
       "title": "iPhone 12 Pro",
       "description": "The latest flagship smartphone from Apple with advanced features and powerful performance.",
-      "image": "https://th.bing.com/th/id/OIP.ED7yn4y52RWiB5_F4vcp9wHaEo?pid=ImgDet&rs=1"
+      "image": "https://th.bing.com/th/id/OIP.ED7yn4y52RWiB5_F4vcp9wHaEo?pid=ImgDet&rs=1",
+      "category": "Hidroekologija"
     },
     {
       "title": "Samsung Galaxy S21",
       "description": "A high-end Android smartphone with a stunning display, powerful camera, and fast performance.",
-      "image": "https://th.bing.com/th/id/OIP.fCZRTD2Io2spJ4KDHUgy_QHaE7?pid=ImgDet&rs=1"
+      "image": "https://th.bing.com/th/id/OIP.fCZRTD2Io2spJ4KDHUgy_QHaE7?pid=ImgDet&rs=1",
+      "category": "Zagađenost"
     },
     {
       "title": "MacBook Pro",
       "description": "A powerful and portable laptop with a sleek design, retina display, and top-notch performance.",
-      "image": "https://th.bing.com/th/id/OIP.Fgu0b3sdeiz4lYdNdmTYdwHaFj?pid=ImgDet&rs=1"
+      "image": "https://th.bing.com/th/id/OIP.Fgu0b3sdeiz4lYdNdmTYdwHaFj?pid=ImgDet&rs=1",
+      "category": "Otpad"
     },
     {
       "title": "Dell XPS 13",
       "description": "An ultra-thin and lightweight laptop with a gorgeous InfinityEdge display and excellent battery life.",
-      "image": "https://th.bing.com/th/id/R.d2384bda8fccd883f9f8cf43a30413e7?rik=K9kvE0qdfX%2bq3Q&pid=ImgRaw&r=0"
+      "image": "https://th.bing.com/th/id/R.d2384bda8fccd883f9f8cf43a30413e7?rik=K9kvE0qdfX%2bq3Q&pid=ImgRaw&r=0",
+      "category": "Hidroekologija"
     },
     {
       "title": "iPhone 12 Pro",
       "description": "The latest flagship smartphone from Apple with advanced features and powerful performance.",
-      "image": "https://th.bing.com/th/id/OIP.ED7yn4y52RWiB5_F4vcp9wHaEo?pid=ImgDet&rs=1"
+      "image": "https://th.bing.com/th/id/OIP.ED7yn4y52RWiB5_F4vcp9wHaEo?pid=ImgDet&rs=1",
+      "category": "Zagađenost"
     },
     {
       "title": "Samsung Galaxy S21",
       "description": "A high-end Android smartphone with a stunning display, powerful camera, and fast performance.",
-      "image": "https://th.bing.com/th/id/OIP.fCZRTD2Io2spJ4KDHUgy_QHaE7?pid=ImgDet&rs=1"
+      "image": "https://th.bing.com/th/id/OIP.fCZRTD2Io2spJ4KDHUgy_QHaE7?pid=ImgDet&rs=1",
+      "category": "Otpad"
+
     },
     {
       "title": "MacBook Pro",
       "description": "A powerful and portable laptop with a sleek design, retina display, and top-notch performance.",
-      "image": "https://th.bing.com/th/id/OIP.Fgu0b3sdeiz4lYdNdmTYdwHaFj?pid=ImgDet&rs=1"
+      "image": "https://th.bing.com/th/id/OIP.Fgu0b3sdeiz4lYdNdmTYdwHaFj?pid=ImgDet&rs=1",
+      "category": "Zagađenost"
     },
     {
       "title": "Dell XPS 13",
       "description": "An ultra-thin and lightweight laptop with a gorgeous InfinityEdge display and excellent battery life.",
-      "image": "https://th.bing.com/th/id/R.d2384bda8fccd883f9f8cf43a30413e7?rik=K9kvE0qdfX%2bq3Q&pid=ImgRaw&r=0"
+      "image": "https://th.bing.com/th/id/R.d2384bda8fccd883f9f8cf43a30413e7?rik=K9kvE0qdfX%2bq3Q&pid=ImgRaw&r=0",
+      "category": "Otpad"
     },
     {
       "title": "MacBook Pro",
       "description": "A powerful and portable laptop with a sleek design, retina display, and top-notch performance.",
-      "image": "https://th.bing.com/th/id/OIP.Fgu0b3sdeiz4lYdNdmTYdwHaFj?pid=ImgDet&rs=1"
+      "image": "https://th.bing.com/th/id/OIP.Fgu0b3sdeiz4lYdNdmTYdwHaFj?pid=ImgDet&rs=1",
+      "category": "Hidroekologija"
     }
   ]

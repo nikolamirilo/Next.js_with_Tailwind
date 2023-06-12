@@ -12,7 +12,9 @@ const Footer = () => {
         id="main-info"
         className="flex flex-row gap-4 justify-around items-center mb-4"
       >
-        <h2 className="text-white text-2xl font-bold">Projekat "Fazon"</h2>
+        <h2 className="text-white text-2xl font-bold">
+          Projekat &quot;Fazon&quot;
+        </h2>
         <img
           className="cursor-pointer w-8 sm:w-auto"
           src="https://tuk-cdn.s3.amazonaws.com/can-uploader/center_aligned_with_image-svg1.svg"
@@ -35,7 +37,7 @@ const Footer = () => {
           </Link>
         </div>
         <div id="copyright" className="text-white text-lg">
-          Copyright © Projekat "Fazon" 2023
+          Copyright © Projekat &quot;Fazon&quot; 2023
         </div>
       </div>
     </div>
