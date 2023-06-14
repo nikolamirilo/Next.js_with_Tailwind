@@ -18,11 +18,13 @@ const Partners = () => {
       id="partneri"
       className="flex flex-col py-20 px-0 gap-5 justify-center items-center md:w-full"
     >
-      <h1 className="text-5xl">Naši Partneri</h1>
-      <div className="relative h-96 lg:w-1/3 md:w-3/5 sm:w-4/5 m-0 flex justify-center items-center">
+      <h1 className="text-4xl font-bold uppercase text-gray-900">
+        Naši Partneri
+      </h1>
+      <div className="relative h-96 w-full lg:w-1/3 md:w-3/5 sm:w-4/5 m-0 flex justify-center items-center">
         <div
           id="left-arrow"
-          className="absolute left-0 z-10 text-green-500 cursor-pointer top-4/10"
+          className="absolute left-1 sm:left-0 z-5 text-green-600 cursor-pointer top-4/10"
           onClick={() => {
             if (index === 0) {
               setIndex(images.length - 1);
@@ -38,11 +40,11 @@ const Partners = () => {
           width={400}
           height={250}
           alt="Partner"
-          className="lg:w-96 lg:h-auto md:w-80 sm:w-72"
+          className="w-4/5 lg:w-4/5 lg:h-auto sm:w-72"
         />
         <div
           id="right-arrow"
-          className="absolute z-10 right-0 text-green-600 cursor-pointer top-4/10"
+          className="absolute z-5 right-1 sm:right-0 text-green-600 cursor-pointer top-4/10"
         >
           <BsArrowRightCircleFill
             size={35}

@@ -12,7 +12,7 @@ const Navbar = ({ type }: { type: string }) => {
   return (
     <nav
       id="navbar"
-      className="bg-green-700 fixed top-0 w-full lg:flex lg:flex-row lg:items-center lg:justify-between grid grid-cols-5 content-center justify-items-start px-4 lg:px-16 z-10"
+      className="bg-green-600 fixed top-0 w-full lg:flex lg:flex-row lg:items-center lg:justify-around grid grid-cols-5 content-center justify-items-start px-4 lg:px-16 z-10"
     >
       <div
         id="main-info"
@@ -39,11 +39,11 @@ const Navbar = ({ type }: { type: string }) => {
       </div>
       <div
         id="menu"
-        className={`text-black flex flex-row items-center justify-center gap-2 col-span-5 w-full my-5 lg:flex lg:justify-end ${
+        className={`text-black flex flex-row items-center justify-center gap-2 col-span-5 w-full lg:w-3/5 my-5 lg:flex lg:justify-end ${
           isOpen ? "" : "hidden"
         }`}
       >
-        <ul className="z-20 flex flex-col items-center justify-center md:flex-col sm:flex-col lg:flex-row">
+        <ul className="z-20 flex flex-col items-center justify-center md:flex-col sm:flex-col lg:flex-row gap-2">
           <li className="text-white text-xl hover:font-semibold hover:underline-offset-2 transition ease-in-out delay-50 hover:scale-105 duration-150 dark:text-white cursor-pointer md:ml-10 lg:py-0 md:py-0 sm:pt-5">
             <a
               onClick={() => {

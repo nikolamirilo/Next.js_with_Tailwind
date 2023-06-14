@@ -1,18 +1,19 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const About = () => {
   const links = [
-    { name: "Open roles", href: "#" },
-    { name: "Internship program", href: "#" },
-    { name: "Our values", href: "#" },
-    { name: "Meet our leadership", href: "#" },
+    { name: "Naše akcije", href: "#akcije" },
+    { name: "Naši Partneri", href: "#partneri" },
+    { name: "Doprinesite našem radu", href: "/doprinesi" },
+    { name: "Kontaktirajte nas", href: "#kontakt" },
   ];
   const stats = [
-    { name: "Offices worldwide", value: "12" },
-    { name: "Full-time colleagues", value: "300+" },
-    { name: "Hours per week", value: "40" },
-    { name: "Paid time off", value: "Unlimited" },
+    { name: "Iteracija", value: "12" },
+    { name: "Učesnika", value: "100+" },
+    { name: "Sakupljenog đubreta", value: "5000+" },
+    { name: "Provedenih sati u radu", value: "10000+" },
   ];
   return (
     <div
@@ -51,31 +52,45 @@ const About = () => {
         />
       </div>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:mx-0">
+        <div className="mx-auto lg:mx-0">
           <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-            Work with us
+            O nama
           </h2>
-          <p className="mt-6 text-lg leading-8 text-gray-300">
-            Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-            lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-            fugiat aliqua.
+          <p className="mt-6 text-lg leading-8 w-full text-gray-300">
+            Projekat "Fazon" predstavlja inspirativnu inicijativu sa fokusom na
+            ekologiju, koja ima za cilj podizanje svesti i angažovanje ljudi u
+            očuvanju našeg dragocenog okruženja. Sa sve većim izazovima koje
+            ljudska aktivnost postavlja pred planetu, "Fazon" je osmišljen kao
+            snažan odgovor na te probleme, pružajući jedinstven i inovativan
+            pristup održivosti. Naša misija je duboko ukorenjena u razumevanju
+            da je svako pojedinačno delovanje važno za očuvanje ekosistema.
+            Projekat "Fazon" se zalaže za promovisanje ekološke svesti putem
+            edukacije, inspirativnih kampanja i praktičnih akcija koje imaju
+            trajan uticaj na naše životno okruženje. Kroz raznolike aktivnosti,
+            "Fazon" podstiče ljude da reevaluiraju svoje navike i preduzmu
+            konkretne korake ka održivom načinu života.
+          </p>
+          <p className="mt-6 text-lg leading-8 w-full text-gray-300">
+            Mi smo pokret koji okuplja ljude širom sveta, spajajući ih u
+            zajedničkom cilju zaštite naše planete. Verujemo da je zajednička
+            akcija ključna za očuvanje ekološke ravnoteže i stvaranje održive
+            budućnosti za sve nas.
           </p>
         </div>
         <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-          <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
+          <div className="grid grid-cols-1 gap-x-4 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
             {links.map((link) => (
-              <a key={link.name} href={link.href}>
-                {link.name} <span aria-hidden="true">&rarr;</span>
-              </a>
+              <Link key={link.name} href={link.href} className="text-lg">
+                {link.name}
+                <span className="ml-2">&rarr;</span>
+              </Link>
             ))}
           </div>
           <dl className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((stat) => (
-              <div key={stat.name} className="flex flex-col-reverse">
-                <dt className="text-base leading-7 text-gray-300">
-                  {stat.name}
-                </dt>
-                <dd className="text-2xl font-bold leading-9 tracking-tight text-white">
+              <div key={stat.name} className="flex flex-col-reverse gap-2">
+                <dt className="text-lg leading-7 text-gray-300">{stat.name}</dt>
+                <dd className="text-4xl font-bold leading-9 tracking-tight text-white">
                   {stat.value}
                 </dd>
               </div>

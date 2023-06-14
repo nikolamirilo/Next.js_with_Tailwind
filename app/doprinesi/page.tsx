@@ -10,13 +10,16 @@ const Contribute = () => {
   };
 
   return (
-    <div className="flex flex-col gap-32">
+    <div
+      className="flex flex-col gap-32 bg-cover bg-left md:bg-center "
+      style={{ backgroundImage: `url(/images/background.webp)` }}
+    >
       <Navbar type="contribute" />
       <div
         id="contribute"
         className="flex justify-center px-2 sm:px-16 lg:px-52 pb-8"
       >
-        <div className="w-full max-w-xl lg:mt-32 mt-16 sm:mt-16 block rounded-lg px-4 py-16 sm:p-4 lg:p-16 border-2 border-green-600 bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+        <div className="w-full max-w-xl lg:mt-32 mt-16 sm:mt-16 bg-white block rounded-lg px-4 py-16 sm:p-4 lg:p-16 md:border-2  shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 ">
           <div className="text-center">
             <Image
               className="mx-auto"
