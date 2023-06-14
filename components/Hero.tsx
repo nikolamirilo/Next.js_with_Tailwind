@@ -15,8 +15,8 @@ const Hero = () => {
             <span className="sm:block ml-2">Budi i ti u ovom Fazonu!</span>
           </h1>
           <p className="text-xl max-w-sm sm:max-w-lg text-center">
-            Projekat "Fazon" je ekoloski projekat koji se bavi povecanjem svesti
-            ljudi o ekologiji.
+            Projekat &quot;Fazon&quot; je ekoloski projekat koji se bavi
+            povecanjem svesti ljudi o ekologiji.
           </p>
 
           <div className="flex">

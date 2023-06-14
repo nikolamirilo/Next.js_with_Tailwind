@@ -57,18 +57,19 @@ const About = () => {
             O nama
           </h2>
           <p className="mt-6 text-lg leading-8 w-full text-gray-300">
-            Projekat "Fazon" predstavlja inspirativnu inicijativu sa fokusom na
-            ekologiju, koja ima za cilj podizanje svesti i angažovanje ljudi u
-            očuvanju našeg dragocenog okruženja. Sa sve većim izazovima koje
-            ljudska aktivnost postavlja pred planetu, "Fazon" je osmišljen kao
-            snažan odgovor na te probleme, pružajući jedinstven i inovativan
-            pristup održivosti. Naša misija je duboko ukorenjena u razumevanju
-            da je svako pojedinačno delovanje važno za očuvanje ekosistema.
-            Projekat "Fazon" se zalaže za promovisanje ekološke svesti putem
-            edukacije, inspirativnih kampanja i praktičnih akcija koje imaju
-            trajan uticaj na naše životno okruženje. Kroz raznolike aktivnosti,
-            "Fazon" podstiče ljude da reevaluiraju svoje navike i preduzmu
-            konkretne korake ka održivom načinu života.
+            Projekat &quot;Fazon&quot; predstavlja inspirativnu inicijativu sa
+            fokusom na ekologiju, koja ima za cilj podizanje svesti i
+            angažovanje ljudi u očuvanju našeg dragocenog okruženja. Sa sve
+            većim izazovima koje ljudska aktivnost postavlja pred planetu,
+            &quot;Fazon&quot; je osmišljen kao snažan odgovor na te probleme,
+            pružajući jedinstven i inovativan pristup održivosti. Naša misija je
+            duboko ukorenjena u razumevanju da je svako pojedinačno delovanje
+            važno za očuvanje ekosistema. Projekat &quot;Fazon&quot; se zalaže
+            za promovisanje ekološke svesti putem edukacije, inspirativnih
+            kampanja i praktičnih akcija koje imaju trajan uticaj na naše
+            životno okruženje. Kroz raznolike aktivnosti, &quot;Fazon&quot;
+            podstiče ljude da reevaluiraju svoje navike i preduzmu konkretne
+            korake ka održivom načinu života.
           </p>
           <p className="mt-6 text-lg leading-8 w-full text-gray-300">
             Mi smo pokret koji okuplja ljude širom sveta, spajajući ih u
