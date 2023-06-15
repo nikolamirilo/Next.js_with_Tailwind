@@ -11,7 +11,7 @@ const Partners: React.FC = () => {
   const images = [fon, eko_men];
   useEffect(() => {
     setCurrentImage(images[index].src);
-  }, [index]);
+  }, [index, images]);
   return (
     <div
       id="partneri"

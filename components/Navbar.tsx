@@ -3,7 +3,11 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 
-const Navbar: React.FC = ({ type }: { type: string }) => {
+interface NavbarProps {
+  type?: string;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ type }) => {
   const [isOpen, setIsOpen] = useState(false);
   const handleHamburgerClick = () => {
     setIsOpen(!isOpen);
@@ -53,7 +57,7 @@ const Navbar: React.FC = ({ type }: { type: string }) => {
               Početna
             </a>
           </li>
-          {type === "home" && (
+          {type === "home" ? (
             <li className="text-white text-xl hover:font-semibold hover:underline-offset-2 transition ease-in-out delay-50 hover:scale-105 duration-150 dark:text-white cursor-pointer md:ml-10 lg:py-0 md:py-0 sm:pt-5">
               <a
                 onClick={() => {
@@ -64,8 +68,8 @@ const Navbar: React.FC = ({ type }: { type: string }) => {
                 O nama
               </a>
             </li>
-          )}
-          {type === "home" && (
+          ) : null}
+          {type === "home" ? (
             <li className="text-white text-xl hover:font-semibold hover:underline-offset-2 transition ease-in-out delay-50 hover:scale-105 duration-150 dark:text-white cursor-pointer md:ml-10 lg:py-0 md:py-0 sm:pt-5">
               <a
                 onClick={() => {
@@ -76,8 +80,8 @@ const Navbar: React.FC = ({ type }: { type: string }) => {
                 Akcije
               </a>
             </li>
-          )}
-          {type === "home" && (
+          ) : null}
+          {type === "home" ? (
             <li className="text-white text-xl hover:font-semibold hover:underline-offset-2 transition ease-in-out delay-50 hover:scale-105 duration-150 dark:text-white cursor-pointer md:ml-10 lg:py-0 md:py-0 sm:pt-5">
               <a
                 onClick={() => {
@@ -88,8 +92,8 @@ const Navbar: React.FC = ({ type }: { type: string }) => {
                 Kontakt
               </a>
             </li>
-          )}
-          {type === "home" && (
+          ) : null}
+          {type === "home" ? (
             <li className="text-white text-xl hover:font-semibold hover:underline-offset-2 transition ease-in-out delay-50 hover:scale-105 duration-150 dark:text-white cursor-pointer md:ml-10 lg:py-0 md:py-0 sm:pt-5">
               <a
                 onClick={() => {
@@ -100,7 +104,7 @@ const Navbar: React.FC = ({ type }: { type: string }) => {
                 Partneri
               </a>
             </li>
-          )}
+          ) : null}
 
           <li className="text-white text-xl hover:font-semibold hover:underline-offset-2 transition ease-in-out delay-50 hover:scale-105 duration-150 dark:text-white cursor-pointer md:ml-10 lg:py-0 md:py-0 sm:pt-5">
             <a

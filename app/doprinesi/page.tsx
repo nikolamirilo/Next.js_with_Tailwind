@@ -6,10 +6,9 @@ import Image from "next/image";
 import React, { useRef, useState } from "react";
 
 const Contribute: React.FC = () => {
-  const [isFormSubmited, setIsFormSubmited] = useState(false);
-  const [image, setImage] = useState(null);
+  const [isFormSubmited, setIsFormSubmited] = useState<boolean>(false);
+  const [image, setImage] = useState<any>({});
   const form = useRef<HTMLFormElement>(null);
-  const formData = new FormData();
 
   const service_id = "service_onw7nzh";
   const template_id = "template_rmcgnjr";
@@ -23,7 +22,6 @@ const Contribute: React.FC = () => {
     const subjectInput = document.getElementById("subject")! as HTMLInputElement;
     const descriptionInput = document.getElementById("description")! as HTMLInputElement;
     const categoryInput = document.getElementById("category")! as HTMLInputElement;
-    formData.append("file", image);
     emailjs.sendForm(service_id, template_id, form.current!, public_key).then(
       (result) => {
         setIsFormSubmited(true);
@@ -48,7 +46,7 @@ const Contribute: React.FC = () => {
       className="flex flex-col gap-32 bg-cover bg-left md:bg-center "
       style={{ backgroundImage: `url(/images/background.webp)` }}
     >
-      <Navbar type="contribute" />
+      <Navbar />
       <div id="contribute" className="flex justify-center px-2 sm:px-16 lg:px-52 pb-8">
         <div className="w-full max-w-xl lg:mt-32 mt-16 sm:mt-16 bg-white block rounded-lg px-4 py-16 sm:p-4 lg:p-16 md:border-2  shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 ">
           <div className="text-center">
@@ -189,13 +187,7 @@ const Contribute: React.FC = () => {
                       </p>
                       <p className="text-xs text-gray-500">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
                     </div>
-                    <input
-                      id="images"
-                      name="images"
-                      type="file"
-                      className="hidden"
-                      onChange={(e) => setImage(e.target.files[0])}
-                    />
+                    <input id="images" name="images" type="file" className="hidden" />
                   </label>
                 </div>
               </div>
