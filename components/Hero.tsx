@@ -1,22 +1,22 @@
 import Link from "next/link";
 import React from "react";
-import background from "../public/images/background.webp";
+import background from "../public/images/background.jpg";
 
-const Hero = () => {
+const Hero: React.FC = () => {
   return (
     <section
-      className="text-white bg-cover bg-left md:bg-center h-screen flex flex-col justify-center items-center backdrop-blur-sm"
+      className="text-white bg-cover bg-center h-screen flex flex-col justify-center items-center"
       style={{ backgroundImage: `url(${background.src})` }}
     >
-      <div className="h-3/5 w-full rounded-3xl backdrop-blur-sm bg-transparent">
+      <div className="h-3/5 w-full rounded-3xl bg-black/30">
         <div className="flex flex-col justify-center items-center h-full gap-4">
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl uppercase drop-shadow-xl text-center">
             Projekat Fazon menja svet,
             <span className="sm:block ml-2">Budi i ti u ovom Fazonu!</span>
           </h1>
           <p className="text-xl max-w-sm sm:max-w-lg text-center">
-            Projekat &quot;Fazon&quot; je ekoloski projekat koji se bavi
-            povecanjem svesti ljudi o ekologiji.
+            Projekat &quot;Fazon&quot; je ekoloski projekat koji se bavi povecanjem svesti ljudi o
+            ekologiji.
           </p>
 
           <div className="flex">

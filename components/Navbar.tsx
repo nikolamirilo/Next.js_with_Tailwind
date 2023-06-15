@@ -3,9 +3,8 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 
-const Navbar = ({ type }: { type: string }) => {
+const Navbar: React.FC = ({ type }: { type: string }) => {
   const [isOpen, setIsOpen] = useState(false);
-  console.log(isOpen);
   const handleHamburgerClick = () => {
     setIsOpen(!isOpen);
   };

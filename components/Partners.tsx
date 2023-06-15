@@ -1,15 +1,14 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { BsArrowRightCircleFill, BsArrowLeftCircleFill } from "react-icons/bs";
-import fon from "../public/images/fon.png";
-import eko_men from "../public/images/eko_men.png";
 import Image from "next/image";
+import React, { useEffect, useState } from "react";
+import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
+import eko_men from "../public/images/eko_men.png";
+import fon from "../public/images/fon.png";
 
-const Partners = () => {
+const Partners: React.FC = () => {
   const [index, setIndex] = useState(0);
   const [currentImage, setCurrentImage] = useState("");
   const images = [fon, eko_men];
-  console.log(currentImage);
   useEffect(() => {
     setCurrentImage(images[index].src);
   }, [index]);
@@ -18,9 +17,7 @@ const Partners = () => {
       id="partneri"
       className="flex flex-col py-20 px-0 gap-5 justify-center items-center md:w-full"
     >
-      <h1 className="text-4xl font-bold uppercase text-gray-900">
-        Naši Partneri
-      </h1>
+      <h1 className="text-4xl font-bold uppercase text-gray-900">Naši Partneri</h1>
       <div className="relative h-96 w-full lg:w-1/3 md:w-3/5 sm:w-4/5 m-0 flex justify-center items-center">
         <div
           id="left-arrow"

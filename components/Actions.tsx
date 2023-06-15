@@ -2,7 +2,7 @@ import React from "react";
 import data from "../data.json";
 import Card from "./Card";
 
-const Actions = ({ title }: { title: string }) => {
+const Actions: React.FC = ({ title }: { title: string }) => {
   return (
     <div className="bg-white" id="akcije">
       <div className="mx-auto max-w-2xl sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 flex flex-col items-center justify-center gap-20">
