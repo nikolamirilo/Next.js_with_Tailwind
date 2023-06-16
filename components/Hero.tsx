@@ -6,7 +6,7 @@ import background from "../public/images/background.jpg";
 const Hero: React.FC = () => {
   return (
     <section className="text-white bg-cover bg-center h-screen flex flex-col justify-center items-center">
-      <Image src={background.src} fill object-fit="cover" priority />
+      <Image src={background.src} fill object-fit="cover" priority alt="Background" />
       <div className="h-3/5 w-full rounded-3xl bg-black/30 z-10">
         <div className="flex flex-col justify-center items-center h-full gap-4">
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl uppercase drop-shadow-xl text-center">
