@@ -1,14 +1,13 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import background from "../public/images/background.jpg";
 
 const Hero: React.FC = () => {
   return (
-    <section
-      className="text-white bg-cover bg-center h-screen flex flex-col justify-center items-center"
-      style={{ backgroundImage: `url(${background.src})` }}
-    >
-      <div className="h-3/5 w-full rounded-3xl bg-black/30">
+    <section className="text-white bg-cover bg-center h-screen flex flex-col justify-center items-center">
+      <Image src={background.src} fill object-fit="cover" priority />
+      <div className="h-3/5 w-full rounded-3xl bg-black/30 z-10">
         <div className="flex flex-col justify-center items-center h-full gap-4">
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl uppercase drop-shadow-xl text-center">
             Projekat Fazon menja svet,

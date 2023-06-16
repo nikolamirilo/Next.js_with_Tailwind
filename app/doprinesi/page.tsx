@@ -63,11 +63,21 @@ const Contribute: React.FC = () => {
           <form
             className="mt-8 space-y-6"
             encType="multipart/form-data"
-            action="submit"
+            action="/success"
+            data-netlify="true"
+            name="contribute"
             method="POST"
             ref={form}
-            onSubmit={handleFormSubmit}
+            // onSubmit={handleFormSubmit}
+            netlify-honeypot="bot-field"
+            data-netlify-recaptcha="true"
           >
+            <input type="hidden" name="form-name" value="contribute" />
+            <label className="hidden">
+              Do not fill this out if you are human:
+              <input name="bot-field" />
+            </label>
+            <div data-netlify-recaptcha="true"></div>
             <div>
               <label
                 htmlFor="full-name"

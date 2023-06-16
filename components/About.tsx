@@ -10,7 +10,7 @@ const About: React.FC = () => {
     { name: "Kontaktirajte nas", href: "#kontakt" },
   ];
   const stats = [
-    { name: "Iteracija", value: "12" },
+    { name: "Iteracija", value: "5" },
     { name: "Učesnika", value: "100+" },
     { name: "Sakupljenog đubreta", value: "5000+" },
     { name: "Provedenih sati u radu", value: "10000+" },
