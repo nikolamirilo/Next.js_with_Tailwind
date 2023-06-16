@@ -1,53 +1,63 @@
 "use client";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import emailjs from "@emailjs/browser";
 import Image from "next/image";
-import React, { useRef, useState } from "react";
+import React, { useReducer, useState } from "react";
 
 const Contribute: React.FC = () => {
-  const [isFormSubmited, setIsFormSubmited] = useState<boolean>(false);
-  const [image, setImage] = useState<any>({});
-  const form = useRef<HTMLFormElement>(null);
-
+  const [selectedFile, setSelectedFile] = useState(null);
   const service_id = "service_onw7nzh";
   const template_id = "template_rmcgnjr";
   const public_key = "BDttK27h7uZfyBIMR";
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    setSelectedFile(file);
+    const reader = new FileReader();
+    reader.onload = () => {
+      setData({ image: reader.result });
+    };
+    reader.readAsDataURL(file);
+  };
+  const initialData = {
+    fullName: "",
+    email: "",
+    title: "",
+    category: "Hidroekologija",
+    description: "",
+    image: "",
+    isPublic: false,
+  };
+  const [data, setData] = useReducer<FormData>(
+    (data, updates) => ({
+      ...data,
+      ...updates,
+    }),
+    initialData
+  );
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    ("use server");
-    const fullNameInput = document.getElementById("full-name") as HTMLInputElement;
-    const emailInput = document.getElementById("email") as HTMLInputElement;
-    const subjectInput = document.getElementById("subject")! as HTMLInputElement;
-    const descriptionInput = document.getElementById("description")! as HTMLInputElement;
-    const categoryInput = document.getElementById("category")! as HTMLInputElement;
-    emailjs.sendForm(service_id, template_id, form.current!, public_key).then(
-      (result) => {
-        setIsFormSubmited(true);
-        fullNameInput.value = "";
-        emailInput.value = "";
-        subjectInput.value = "";
-        descriptionInput.value = "";
-        categoryInput.value = "";
+    // fetch("");
+    await fetch("http://localhost:3000/api/actions/addNew", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
-      (error) => {
-        alert(`Error`);
-        console.log(error);
-      }
-    );
+      //make sure to serialize your JSON body
+      body: JSON.stringify(data),
+    }).then((response) => {
+      alert("Vas odgovor je zabelezen");
+    });
   };
-
-  if (isFormSubmited) {
-    alert("Poslata poruka");
-  }
   return (
     <div
       className="flex flex-col gap-32 bg-cover bg-left md:bg-center "
+      id="contribute"
       style={{ backgroundImage: `url(/images/background.webp)` }}
     >
       <Navbar />
-      <div id="contribute" className="flex justify-center px-2 sm:px-16 lg:px-52 pb-8">
+      <div className="flex justify-center px-2 sm:px-16 lg:px-52 pb-8">
         <div className="w-full max-w-xl lg:mt-32 mt-16 sm:mt-16 bg-white block rounded-lg px-4 py-16 sm:p-4 lg:p-16 md:border-2  shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 ">
           <div className="text-center">
             <Image
@@ -63,21 +73,11 @@ const Contribute: React.FC = () => {
           <form
             className="mt-8 space-y-6"
             encType="multipart/form-data"
-            action="/success"
-            data-netlify="true"
+            action="submit"
             name="contribute"
             method="POST"
-            ref={form}
-            // onSubmit={handleFormSubmit}
-            netlify-honeypot="bot-field"
-            data-netlify-recaptcha="true"
+            onSubmit={handleFormSubmit}
           >
-            <input type="hidden" name="form-name" value="contribute" />
-            <label className="hidden">
-              Do not fill this out if you are human:
-              <input name="bot-field" />
-            </label>
-            <div data-netlify-recaptcha="true"></div>
             <div>
               <label
                 htmlFor="full-name"
@@ -87,6 +87,10 @@ const Contribute: React.FC = () => {
               </label>
               <div className="mt-1">
                 <input
+                  value={data.fullName}
+                  onChange={(e) => {
+                    setData({ fullName: e.target.value });
+                  }}
                   id="full-name"
                   name="fullName"
                   type="text"
@@ -101,6 +105,10 @@ const Contribute: React.FC = () => {
               </label>
               <div className="mt-1">
                 <input
+                  value={data.email}
+                  onChange={(e) => {
+                    setData({ email: e.target.value });
+                  }}
                   id="email"
                   name="email"
                   type="email"
@@ -111,16 +119,17 @@ const Contribute: React.FC = () => {
               </div>
             </div>
             <div>
-              <label
-                htmlFor="subject"
-                className="block text-sm font-medium leading-5 text-gray-700"
-              >
+              <label htmlFor="title" className="block text-sm font-medium leading-5 text-gray-700">
                 Naslov akcije:
               </label>
               <div className="mt-1">
                 <input
-                  id="subject"
-                  name="subject"
+                  value={data.title}
+                  onChange={(e) => {
+                    setData({ title: e.target.value });
+                  }}
+                  id="title"
+                  name="title"
                   type="text"
                   required
                   className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-green-600 focus:border-green-600 sm:text-sm"
@@ -136,11 +145,14 @@ const Contribute: React.FC = () => {
               </label>
               <div className="mt-1">
                 <textarea
+                  value={data.description}
+                  onChange={(e) => {
+                    setData({ description: e.target.value });
+                  }}
                   id="description"
                   name="description"
                   rows={4}
                   className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-green-600 focus:border-green-600 sm:text-sm"
-                  placeholder="Write your thoughts here..."
                 />
               </div>
             </div>
@@ -153,6 +165,10 @@ const Contribute: React.FC = () => {
               </label>
               <div className="mt-1">
                 <select
+                  value={data.category}
+                  onChange={(e) => {
+                    setData({ category: e.target.value });
+                  }}
                   id="category"
                   name="category"
                   className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-green-600 focus:border-green-600 sm:text-sm"
@@ -175,9 +191,16 @@ const Contribute: React.FC = () => {
                 <div className="flex items-center justify-center w-full">
                   <label
                     htmlFor="images"
-                    className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-white hover:border-green-500"
+                    className="flex relative flex-col items-center justify-center bg-center bg-cover w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-white hover:border-green-500"
                   >
-                    <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                    {data.image !== "" ? (
+                      <Image src={data.image} fill object-fit="cover" priority alt="Background" />
+                    ) : null}
+                    <div
+                      className={`flex flex-col items-center justify-center pt-5 pb-6 ${
+                        data.image === "" ? "" : "hidden"
+                      }`}
+                    >
                       <svg
                         className="w-10 h-10 text-gray-400"
                         fill="none"
@@ -197,7 +220,14 @@ const Contribute: React.FC = () => {
                       </p>
                       <p className="text-xs text-gray-500">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
                     </div>
-                    <input id="images" name="images" type="file" className="hidden" />
+                    <input
+                      onChange={handleFileChange}
+                      id="images"
+                      name="images"
+                      type="file"
+                      accept="image/*"
+                      className="hidden"
+                    />
                   </label>
                 </div>
               </div>

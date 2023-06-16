@@ -32,13 +32,16 @@ const Partners: React.FC = () => {
         >
           <BsArrowLeftCircleFill size={35} />
         </div>
-        <Image
-          src={currentImage}
-          width={400}
-          height={250}
-          alt="Partner"
-          className="w-4/5 lg:w-4/5 lg:h-auto sm:w-72"
-        />
+        {currentImage !== "" ? (
+          <Image
+            src={currentImage}
+            width={400}
+            height={250}
+            alt="Partner"
+            className="w-4/5 lg:w-4/5 lg:h-auto sm:w-72"
+          />
+        ) : null}
+
         <div
           id="right-arrow"
           className="absolute z-5 right-1 sm:right-0 text-green-600 cursor-pointer top-4/10"
