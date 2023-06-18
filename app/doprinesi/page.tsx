@@ -1,23 +1,12 @@
 "use client";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import { Actions } from "@/types/interfaces";
 import Image from "next/image";
 import React, { useReducer, useState } from "react";
 
 const Contribute: React.FC = () => {
   const [selectedFile, setSelectedFile] = useState(null);
-  const service_id = "service_onw7nzh";
-  const template_id = "template_rmcgnjr";
-  const public_key = "BDttK27h7uZfyBIMR";
-  const handleFileChange = (event) => {
-    const file = event.target.files[0];
-    setSelectedFile(file);
-    const reader = new FileReader();
-    reader.onload = () => {
-      setData({ image: reader.result });
-    };
-    reader.readAsDataURL(file);
-  };
   const initialData = {
     fullName: "",
     email: "",
@@ -25,19 +14,30 @@ const Contribute: React.FC = () => {
     category: "Hidroekologija",
     description: "",
     image: "",
-    isPublic: false,
+    isPublic: "false",
   };
-  const [data, setData] = useReducer<FormData>(
-    (data, updates) => ({
+  const [data, setData] = useReducer(
+    (data: Actions, updates: any) => ({
       ...data,
       ...updates,
     }),
     initialData
   );
 
-  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleFileChange = (e: any) => {
+    const file = e?.target?.files[0];
+    if (file) {
+      setSelectedFile(file);
+      const reader = new FileReader();
+      reader.onload = () => {
+        setData({ image: reader.result });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleFormSubmit = async (e: any) => {
     e.preventDefault();
-    // fetch("");
     await fetch("http://localhost:3000/api/actions/addNew", {
       method: "POST",
       headers: {
@@ -67,16 +67,16 @@ const Contribute: React.FC = () => {
               width={100}
               height={100}
             />
-            <h2 className="mt-6 text-2xl font-bold text-gray-900">Doprinesi našoj akciji</h2>
+            <h2 className="mt-6 text-2xl font-bold text-gray-900">
+              Doprinesi našoj akciji
+            </h2>
           </div>
 
           <form
             className="mt-8 space-y-6"
             encType="multipart/form-data"
-            action="submit"
             name="contribute"
             method="POST"
-            onSubmit={handleFormSubmit}
           >
             <div>
               <label
@@ -88,7 +88,7 @@ const Contribute: React.FC = () => {
               <div className="mt-1">
                 <input
                   value={data.fullName}
-                  onChange={(e) => {
+                  onChange={(e: any) => {
                     setData({ fullName: e.target.value });
                   }}
                   id="full-name"
@@ -100,13 +100,16 @@ const Contribute: React.FC = () => {
               </div>
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium leading-5 text-gray-700">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium leading-5 text-gray-700"
+              >
                 E-mail adresa
               </label>
               <div className="mt-1">
                 <input
                   value={data.email}
-                  onChange={(e) => {
+                  onChange={(e: any) => {
                     setData({ email: e.target.value });
                   }}
                   id="email"
@@ -119,13 +122,16 @@ const Contribute: React.FC = () => {
               </div>
             </div>
             <div>
-              <label htmlFor="title" className="block text-sm font-medium leading-5 text-gray-700">
+              <label
+                htmlFor="title"
+                className="block text-sm font-medium leading-5 text-gray-700"
+              >
                 Naslov akcije:
               </label>
               <div className="mt-1">
                 <input
                   value={data.title}
-                  onChange={(e) => {
+                  onChange={(e: any) => {
                     setData({ title: e.target.value });
                   }}
                   id="title"
@@ -146,7 +152,7 @@ const Contribute: React.FC = () => {
               <div className="mt-1">
                 <textarea
                   value={data.description}
-                  onChange={(e) => {
+                  onChange={(e: any) => {
                     setData({ description: e.target.value });
                   }}
                   id="description"
@@ -166,7 +172,7 @@ const Contribute: React.FC = () => {
               <div className="mt-1">
                 <select
                   value={data.category}
-                  onChange={(e) => {
+                  onChange={(e: any) => {
                     setData({ category: e.target.value });
                   }}
                   id="category"
@@ -194,7 +200,13 @@ const Contribute: React.FC = () => {
                     className="flex relative flex-col items-center justify-center bg-center bg-cover w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-white hover:border-green-500"
                   >
                     {data.image !== "" ? (
-                      <Image src={data.image} fill object-fit="cover" priority alt="Background" />
+                      <Image
+                        src={data.image}
+                        fill
+                        object-fit="cover"
+                        priority
+                        alt="Background"
+                      />
                     ) : null}
                     <div
                       className={`flex flex-col items-center justify-center pt-5 pb-6 ${
@@ -216,9 +228,12 @@ const Contribute: React.FC = () => {
                         />
                       </svg>
                       <p className="mt-2 text-sm text-gray-500">
-                        <span className="font-semibold">Click to upload</span> or drag and drop
+                        <span className="font-semibold">Click to upload</span>{" "}
+                        or drag and drop
                       </p>
-                      <p className="text-xs text-gray-500">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                      <p className="text-xs text-gray-500">
+                        SVG, PNG, JPG or GIF (MAX. 800x400px)
+                      </p>
                     </div>
                     <input
                       onChange={handleFileChange}
@@ -236,6 +251,9 @@ const Contribute: React.FC = () => {
               <button
                 type="submit"
                 className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-green-600 hover:bg-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-600"
+                onClick={(e: any) => {
+                  handleFormSubmit(e);
+                }}
               >
                 Pošalji
               </button>

@@ -8,8 +8,7 @@ import { getData } from "@/lib/actions";
 import React from "react";
 
 const Home: React.FC = async () => {
-  const data = await getData();
-  const publicActions = data.filter((item: any) => item.isPublic === true);
+  const publicActions = await getData("public");
   return (
     <div className="flex flex-col gap-32" id="home">
       <Navbar type="home" />

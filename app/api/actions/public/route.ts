@@ -1,10 +1,10 @@
-import { getActions } from "@/utils/actions";
+import { getPublicActions } from "@/utils/actions";
 import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
-    const allActions  = await getActions();
-    return NextResponse.json(allActions);
+    const publicActions  = await getPublicActions();
+    return NextResponse.json(publicActions);
   } catch (error:any) {
     return new Response(error.message);
   }

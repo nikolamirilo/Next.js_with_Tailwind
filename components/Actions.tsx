@@ -2,7 +2,7 @@ import React from "react";
 import Card from "./Card";
 interface ActionsProps {
   title?: string;
-  data: [];
+  data: object[];
   type?: any;
 }
 
@@ -14,13 +14,13 @@ const Actions: React.FC<ActionsProps> = ({ title, data, type }) => {
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">
           {data
             ? data
-                .sort((a, b) => a.category.localeCompare(b.category))
+                .sort((a: any, b: any) => a.category.localeCompare(b.category))
                 .map((item: any, idx: number) => {
                   return (
                     <Card
                       type={type}
                       key={idx}
-                      id={item._id}
+                      _id={item._id}
                       isPublic={item.isPublic}
                       title={item.title}
                       description={item.description}

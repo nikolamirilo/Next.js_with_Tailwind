@@ -7,6 +7,6 @@ export async function POST(request: Request) {
     await addNewAction(newAction);
     return NextResponse.json("Action Added Successully");
   } catch (error) {
-    return new Response(error.message);
+    return new Response((error as Error).message);
   }
 }
