@@ -77,7 +77,7 @@ const Card: React.FC<CardProps> = ({
                 const isPublicInput = input.toString();
                 try {
                   const res = await fetch(
-                    "http://localhost:3000/api/actions/update",
+                    `${process.env.WEB_APP_URL}/api/actions/update`,
                     {
                       method: "PUT",
                       headers: {

@@ -8,13 +8,12 @@ import { getData } from "@/lib/actions";
 import React from "react";
 
 const Home: React.FC = async () => {
-  const publicActions = await getData("public");
   return (
     <div className="flex flex-col gap-32" id="home">
       <Navbar type="home" />
       <Hero />
       <About />
-      <Actions title="Akcije Projekta Fazon" data={publicActions} />
+      <Actions title="Akcije Projekta Fazon" actionType="actions/public" />
       <Partners />
       <Footer />
     </div>

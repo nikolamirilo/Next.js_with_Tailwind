@@ -38,7 +38,7 @@ const Contribute: React.FC = () => {
 
   const handleFormSubmit = async (e: any) => {
     e.preventDefault();
-    await fetch("http://localhost:3000/api/actions/addNew", {
+    await fetch(`${process.env.WEB_APP_URL}/api/actions/addNew`, {
       method: "POST",
       headers: {
         Accept: "application/json",

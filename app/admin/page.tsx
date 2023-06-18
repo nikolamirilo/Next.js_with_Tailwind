@@ -6,7 +6,7 @@ import React, { useState, useEffect } from "react";
 import { RiAdminFill } from "react-icons/ri";
 const Actions = React.lazy(() => import("@/components/Actions"));
 
-const Admin: React.FC = async () => {
+const Admin: React.FC = () => {
   const [isAuthorized, setIsAuthorized] = useState(false);
   const handleSubmit = async () => {
     const passCode = document?.getElementById("passCode") as HTMLInputElement;
@@ -14,15 +14,6 @@ const Admin: React.FC = async () => {
       setIsAuthorized(true);
     }
   };
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const fetchedData = await getData("");
-      setData(fetchedData);
-    };
-    fetchData();
-  }, []);
   return (
     <div id="admin" className="flex flex-col justify-center items-center">
       <Navbar />
@@ -30,8 +21,8 @@ const Admin: React.FC = async () => {
         {isAuthorized === true ? (
           <React.Suspense fallback={<div>Loading...</div>}>
             <Actions
-              data={data}
               title="Akcije prijavljene od strane od strane korisnika"
+              actionType="actions"
               type="admin"
             />
           </React.Suspense>
