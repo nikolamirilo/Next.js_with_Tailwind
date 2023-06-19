@@ -4,7 +4,6 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import Partners from "@/components/Partners";
-import { getData } from "@/lib/actions";
 import React from "react";
 
 const Home: React.FC = async () => {
