@@ -10,19 +10,7 @@ module.exports = {
     return [
       {
         source: "/api/actions/public",
-        destination: `${WEB_APP_URL}/*`,
-      },
-      {
-        source: "/api/actions",
-        destination: `${WEB_APP_URL}/admin*`,
-      },
-      {
-        source: "/api/actions/addNew",
-        destination: `${WEB_APP_URL}/doprinesi*`,
-      },
-      {
-        source: "/api/actions/update",
-        destination: `${WEB_APP_URL}/admin*`,
+        destination: `${process.env.WEB_APP_URL}/*`,
       },
     ];
   },
