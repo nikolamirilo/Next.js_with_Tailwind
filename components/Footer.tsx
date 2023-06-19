@@ -9,13 +9,11 @@ const Footer: React.FC = () => {
       id="kontakt"
       className="flex py-6 flex-col lg:flex-row md:flex-col sm:flex-col justify-around items-center bg-green-600 w-full"
     >
-      <div id="main-info" className="flex flex-row gap-4 justify-between items-center mb-4">
-        <Image
-          src="https://tuk-cdn.s3.amazonaws.com/can-uploader/center_aligned_with_image-svg1.svg"
-          alt="logo"
-          width={70}
-          height={50}
-        />
+      <div
+        id="main-info"
+        className="flex flex-row justify-between items-center mb-4 gap-0 sm:gap-2"
+      >
+        <Image src="/images/logo.png" alt="logo" width={70} height={50} />
         <h2 className="text-white text-2xl font-bold">Projekat &quot;Fazon&quot;</h2>
       </div>
       <div className="flex flex-col items-center justify-center gap-6">
@@ -31,7 +29,7 @@ const Footer: React.FC = () => {
           </Link>
         </div>
         <div id="copyright" className="text-white text-lg">
-          Copyright © Projekat &quot;Fazon&quot; 2023
+          Copyright © Projekat &quot;Fazon&quot; 2023.
         </div>
       </div>
     </div>

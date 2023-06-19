@@ -19,11 +19,11 @@ const Navbar: React.FC<NavbarProps> = ({ type }) => {
     >
       <div
         id="main-info"
-        className="lg:flex lg:flex-row lg:items-center lg:justify-center grid grid-cols-4 col-span-4 w-auto gap-0 lg:gap-2 "
+        className="lg:flex lg:flex-row lg:items-center lg:justify-center grid grid-cols-4 col-span-4 w-auto gap-0 sm:gap-2 "
       >
         <Image
           className="cursor-pointer col-span-1"
-          src="https://tuk-cdn.s3.amazonaws.com/can-uploader/center_aligned_with_image-svg1.svg"
+          src="/images/logo.png"
           alt="logo"
           width={70}
           height={50}
@@ -47,7 +47,7 @@ const Navbar: React.FC<NavbarProps> = ({ type }) => {
         }`}
       >
         <ul className="z-20 flex flex-col items-center justify-center md:flex-col sm:flex-col lg:flex-row gap-2">
-          <li className="text-white text-xl hover:font-semibold hover:underline-offset-2 transition ease-in-out delay-50 hover:scale-105 duration-150 dark:text-white cursor-pointer md:ml-10 lg:py-0 md:py-0 sm:pt-5">
+          <li className="text-white text-xl hover:font-semibold hover:underline-offset-2 transition ease-in-out delay-50 hover:scale-105 duration-150 dark:text-white cursor-pointer md:ml-5 lg:py-0 md:py-0 sm:pt-5">
             <a
               onClick={() => {
                 setIsOpen(false);
@@ -58,7 +58,7 @@ const Navbar: React.FC<NavbarProps> = ({ type }) => {
             </a>
           </li>
           {type === "home" ? (
-            <li className="text-white text-xl hover:font-semibold hover:underline-offset-2 transition ease-in-out delay-50 hover:scale-105 duration-150 dark:text-white cursor-pointer md:ml-10 lg:py-0 md:py-0 sm:pt-5">
+            <li className="text-white text-xl hover:font-semibold hover:underline-offset-2 transition ease-in-out delay-50 hover:scale-105 duration-150 dark:text-white cursor-pointer md:ml-5 lg:py-0 md:py-0 sm:pt-5">
               <a
                 onClick={() => {
                   setIsOpen(false);
@@ -70,7 +70,7 @@ const Navbar: React.FC<NavbarProps> = ({ type }) => {
             </li>
           ) : null}
           {type === "home" ? (
-            <li className="text-white text-xl hover:font-semibold hover:underline-offset-2 transition ease-in-out delay-50 hover:scale-105 duration-150 dark:text-white cursor-pointer md:ml-10 lg:py-0 md:py-0 sm:pt-5">
+            <li className="text-white text-xl hover:font-semibold hover:underline-offset-2 transition ease-in-out delay-50 hover:scale-105 duration-150 dark:text-white cursor-pointer md:ml-5 lg:py-0 md:py-0 sm:pt-5">
               <a
                 onClick={() => {
                   setIsOpen(false);
@@ -82,7 +82,7 @@ const Navbar: React.FC<NavbarProps> = ({ type }) => {
             </li>
           ) : null}
           {type === "home" ? (
-            <li className="text-white text-xl hover:font-semibold hover:underline-offset-2 transition ease-in-out delay-50 hover:scale-105 duration-150 dark:text-white cursor-pointer md:ml-10 lg:py-0 md:py-0 sm:pt-5">
+            <li className="text-white text-xl hover:font-semibold hover:underline-offset-2 transition ease-in-out delay-50 hover:scale-105 duration-150 dark:text-white cursor-pointer md:ml-5 lg:py-0 md:py-0 sm:pt-5">
               <a
                 onClick={() => {
                   setIsOpen(false);
@@ -94,7 +94,7 @@ const Navbar: React.FC<NavbarProps> = ({ type }) => {
             </li>
           ) : null}
 
-          <li className="text-white text-xl hover:font-semibold hover:underline-offset-2 transition ease-in-out delay-50 hover:scale-105 duration-150 dark:text-white cursor-pointer md:ml-10 lg:py-0 md:py-0 sm:pt-5">
+          <li className="text-white text-xl hover:font-semibold hover:underline-offset-2 transition ease-in-out delay-50 hover:scale-105 duration-150 dark:text-white cursor-pointer md:ml-5 lg:py-0 md:py-0 sm:pt-5">
             <a
               onClick={() => {
                 setIsOpen(false);
@@ -104,7 +104,7 @@ const Navbar: React.FC<NavbarProps> = ({ type }) => {
               Doprinesi
             </a>
           </li>
-          <li className="text-white text-xl hover:font-semibold hover:underline-offset-2 transition ease-in-out delay-50 hover:scale-105 duration-150 dark:text-white cursor-pointer md:ml-10 lg:py-0 md:py-0 sm:pt-5">
+          <li className="text-white text-xl hover:font-semibold hover:underline-offset-2 transition ease-in-out delay-50 hover:scale-105 duration-150 dark:text-white cursor-pointer md:ml-5 lg:py-0 md:py-0 sm:pt-5">
             <a
               onClick={() => {
                 setIsOpen(false);
