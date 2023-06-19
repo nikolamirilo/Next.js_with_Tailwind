@@ -7,7 +7,11 @@ interface ActionsProps {
 }
 
 async function getData(actionType: string) {
-  const res = await fetch(`${process.env.WEB_APP_URL}/api/${actionType}`, { cache: "no-store" });
+  const res = await fetch(`${process.env.WEB_APP_URL}/api/${actionType}`, {
+    method: "GET",
+    mode: "cors",
+    cache: "no-store",
+  });
   console.log(res);
   if (!res.ok) {
     throw new Error("Failed to fetch data");
