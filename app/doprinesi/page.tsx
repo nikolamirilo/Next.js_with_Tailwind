@@ -13,10 +13,10 @@ const Contribute: React.FC = () => {
     fullName: "",
     email: "",
     title: "",
-    category: "Hidroekologija",
+    category: "Otpad",
     description: "",
     image: "",
-    isPublic: "false",
+    isPublic: false,
   };
   const [data, setData] = useReducer(
     (data: Actions, updates: any) => ({

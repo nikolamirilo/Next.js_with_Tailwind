@@ -21,7 +21,7 @@ const Card: React.FC<CardProps> = ({
   type,
   isPublic,
 }) => {
-  const [isChecked, setIsChecked] = useState(false);
+  const [isChecked, setIsChecked] = useState<boolean>(false);
   useEffect(() => {
     setIsChecked(isPublic);
   }, []);

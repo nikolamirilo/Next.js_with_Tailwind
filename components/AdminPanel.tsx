@@ -15,7 +15,7 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ children }) => {
     }
   };
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen py-12">
       {isAuthorized === true ? children : <Modal handleSubmit={handleSubmit} />}
     </main>
   );

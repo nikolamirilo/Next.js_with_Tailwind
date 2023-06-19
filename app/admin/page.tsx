@@ -7,14 +7,10 @@ const Actions = dynamic(() => import("@/components/Actions"));
 
 const Admin: React.FC = () => {
   return (
-    <div id="admin" className="flex flex-col justify-center items-center py-12">
+    <div id="admin" className="flex flex-col justify-center items-center">
       <Navbar />
       <AdminPanel>
-        <Actions
-          title="Akcije prijavljene od strane od strane korisnika"
-          actionType="actions"
-          type="admin"
-        />
+        <Actions title="Sve Akcije prijavljene od korisnika" actionType="actions" type="admin" />
       </AdminPanel>
       <Footer />
     </div>
