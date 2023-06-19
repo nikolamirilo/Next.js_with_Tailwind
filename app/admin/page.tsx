@@ -1,8 +1,9 @@
-import Actions from "@/components/Actions";
 import AdminPanel from "@/components/AdminPanel";
-import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import dynamic from "next/dynamic";
 import React from "react";
+const Footer = dynamic(() => import("@/components/Footer"));
+const Actions = dynamic(() => import("@/components/Actions"));
 
 const Admin: React.FC = () => {
   return (

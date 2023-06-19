@@ -87,18 +87,6 @@ const Navbar: React.FC<NavbarProps> = ({ type }) => {
                 onClick={() => {
                   setIsOpen(false);
                 }}
-                href="#kontakt"
-              >
-                Kontakt
-              </a>
-            </li>
-          ) : null}
-          {type === "home" ? (
-            <li className="text-white text-xl hover:font-semibold hover:underline-offset-2 transition ease-in-out delay-50 hover:scale-105 duration-150 dark:text-white cursor-pointer md:ml-10 lg:py-0 md:py-0 sm:pt-5">
-              <a
-                onClick={() => {
-                  setIsOpen(false);
-                }}
                 href="#partneri"
               >
                 Partneri
@@ -114,6 +102,16 @@ const Navbar: React.FC<NavbarProps> = ({ type }) => {
               href="/doprinesi"
             >
               Doprinesi
+            </a>
+          </li>
+          <li className="text-white text-xl hover:font-semibold hover:underline-offset-2 transition ease-in-out delay-50 hover:scale-105 duration-150 dark:text-white cursor-pointer md:ml-10 lg:py-0 md:py-0 sm:pt-5">
+            <a
+              onClick={() => {
+                setIsOpen(false);
+              }}
+              href="/admin"
+            >
+              Admin
             </a>
           </li>
         </ul>
