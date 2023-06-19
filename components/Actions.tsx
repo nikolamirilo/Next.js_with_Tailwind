@@ -9,10 +9,8 @@ interface ActionsProps {
 async function getData(actionType: string) {
   const res = await fetch(`${process.env.WEB_APP_URL}/api/${actionType}`, {
     method: "GET",
-    mode: "cors",
     cache: "no-store",
   });
-  console.log(res);
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
@@ -25,7 +23,9 @@ const Actions: React.FC<ActionsProps> = async ({ title, actionType, type }) => {
   return (
     <div className="bg-white" id="akcije">
       <div className="mx-auto max-w-2xl sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 flex flex-col items-center justify-center gap-20">
-        <h1 className="text-3xl font-bold uppercase text-center text-gray-900">{title}</h1>
+        <h1 className="text-3xl font-bold uppercase text-center text-gray-900">
+          {title} {data.length}
+        </h1>
         <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">
           {data
             ? data.map((item: any, idx: number) => {

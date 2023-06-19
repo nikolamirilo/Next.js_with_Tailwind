@@ -61,7 +61,6 @@ const Card: React.FC<CardProps> = ({
                 try {
                   const res = await fetch(`${process.env.WEB_APP_URL}/api/actions/update`, {
                     method: "PUT",
-                    mode: "cors",
                     headers: {
                       Accept: "application/json",
                       "Content-Type": "application/json",
@@ -71,6 +70,7 @@ const Card: React.FC<CardProps> = ({
                       isPublic: !isChecked,
                     }),
                   });
+                  console.log(res);
                 } catch (error) {
                   console.log(error as Error);
                 }

@@ -42,7 +42,6 @@ const Contribute: React.FC = () => {
     e.preventDefault();
     await fetch(`${process.env.WEB_APP_URL}/api/actions/addNew`, {
       method: "POST",
-      mode: "cors",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -50,6 +49,7 @@ const Contribute: React.FC = () => {
       //make sure to serialize your JSON body
       body: JSON.stringify(data),
     }).then((response) => {
+      console.log(response);
       alert("Vas odgovor je zabelezen");
     });
   };

@@ -22,15 +22,15 @@ const Navbar: React.FC<NavbarProps> = ({ type }) => {
         className="lg:flex lg:flex-row lg:items-center lg:justify-center grid grid-cols-4 col-span-4 w-auto gap-0 sm:gap-2 "
       >
         <Image
-          className="cursor-pointer col-span-1"
+          className="cursor-pointer col-span-1 py-2"
           src="/images/logo.png"
           alt="logo"
-          width={70}
+          width={75}
           height={50}
         />
-        <h2 className="lg:text-2xl text-xl font-bold text-white col-span-3 flex flex-row justify-center items-center">
+        {/* <h2 className="lg:text-2xl text-xl font-bold text-white col-span-3 flex flex-row justify-center items-center">
           Projekat &quot;Fazon&quot;
-        </h2>
+        </h2> */}
       </div>
       <div
         id="hamburger-menu"

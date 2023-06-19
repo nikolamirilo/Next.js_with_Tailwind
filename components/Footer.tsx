@@ -13,8 +13,14 @@ const Footer: React.FC = () => {
         id="main-info"
         className="flex flex-row justify-between items-center mb-4 gap-0 sm:gap-2"
       >
-        <Image src="/images/logo.png" alt="logo" width={70} height={50} />
-        <h2 className="text-white text-2xl font-bold">Projekat &quot;Fazon&quot;</h2>
+        <Image
+          className="cursor-pointer col-span-1 py-2"
+          src="/images/logo.png"
+          alt="logo"
+          width={100}
+          height={50}
+        />
+        {/* <h2 className="text-white text-2xl font-bold">Projekat &quot;Fazon&quot;</h2> */}
       </div>
       <div className="flex flex-col items-center justify-center gap-6">
         <div id="contact" className="flex flex-row gap-4 justify-around items-center">
