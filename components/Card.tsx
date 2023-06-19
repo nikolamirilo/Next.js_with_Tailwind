@@ -58,7 +58,7 @@ const Card: React.FC<CardProps> = ({
               checked={isChecked}
               onChange={async (e: any) => {
                 setIsChecked(e.target.checked);
-                const res = await fetch(`${process.env.WEB_APP_URL}/api/actions/update`, {
+                await fetch(`${process.env.WEB_APP_URL}/api/actions/update`, {
                   method: "PUT",
                   headers: {
                     Accept: "application/json",
@@ -69,7 +69,6 @@ const Card: React.FC<CardProps> = ({
                     isPublic: isChecked,
                   }),
                 });
-                console.log(res);
               }}
             />
           </div>
