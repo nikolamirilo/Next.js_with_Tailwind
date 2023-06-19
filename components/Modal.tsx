@@ -2,7 +2,10 @@
 import React from "react";
 import { RiAdminFill } from "react-icons/ri";
 
-const Modal: React.FC = ({ handleSubmit }) => {
+interface ModalProps {
+  handleSubmit: () => void;
+}
+const Modal: React.FC<ModalProps> = ({ handleSubmit }) => {
   return (
     <div className="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
       <div className="fixed inset-0 bg-green-600/30 bg-opacity-75 transition-opacity"></div>

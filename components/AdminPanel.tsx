@@ -2,7 +2,11 @@
 import Modal from "@/components/Modal";
 import React, { useState } from "react";
 
-const AdminPanel: React.FC = ({ children }: { children: React.ReactNode }) => {
+interface AdminPanelProps {
+  children: React.ReactNode;
+}
+
+const AdminPanel: React.FC<AdminPanelProps> = ({ children }) => {
   const [isAuthorized, setIsAuthorized] = useState(false);
   const handleSubmit = async () => {
     const passCode = document?.getElementById("passCode") as HTMLInputElement;

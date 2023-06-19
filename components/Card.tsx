@@ -26,8 +26,8 @@ const Card: React.FC<CardProps> = ({
     setIsChecked(isPublic);
   }, []);
   return (
-    <div className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-      <div className="w-full h-56  hover:h-ful relative">
+    <div className="block w-full rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+      <div className="w-full h-56 hover:h-ful relative">
         <Image className="rounded-t-lg" src={image} alt={title} fill object-fit="cover" />
       </div>
       <div className="p-6">
@@ -58,17 +58,21 @@ const Card: React.FC<CardProps> = ({
               checked={isChecked}
               onChange={async (e: any) => {
                 setIsChecked(e.target.checked);
-                await fetch(`${process.env.WEB_APP_URL}/api/actions/update`, {
-                  method: "PUT",
-                  headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify({
-                    _id: _id,
-                    isPublic: isChecked,
-                  }),
-                });
+                try {
+                  const res = await fetch(`${process.env.WEB_APP_URL}/api/actions/update`, {
+                    method: "PUT",
+                    headers: {
+                      Accept: "application/json",
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                      _id: _id,
+                      isPublic: !isChecked,
+                    }),
+                  });
+                } catch (error) {
+                  console.log(error as Error);
+                }
               }}
             />
           </div>

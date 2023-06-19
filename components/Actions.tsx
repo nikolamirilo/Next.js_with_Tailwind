@@ -6,9 +6,8 @@ interface ActionsProps {
   type?: string;
 }
 
-async function getData(actionType) {
+async function getData(actionType: string) {
   const res = await fetch(`${process.env.WEB_APP_URL}/api/${actionType}`, { cache: "no-store" });
-  console.log(res);
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
