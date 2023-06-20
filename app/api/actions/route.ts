@@ -6,6 +6,7 @@ export async function GET() {
     const allActions  = await getActions();
     return NextResponse.json(allActions);
   } catch (error:any) {
+    console.log(error)
     return new Response(error.message);
   }
 }

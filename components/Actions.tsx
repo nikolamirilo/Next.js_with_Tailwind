@@ -7,14 +7,20 @@ interface ActionsProps {
 }
 
 async function getData(actionType: string) {
-  const res = await fetch(`${process.env.WEB_APP_URL}/api/${actionType}`, {
-    method: "GET",
-    cache: "no-store",
-  });
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
+  console.log(`Web App Url: ${process.env.WEB_APP_URL}`);
+  console.log(`Action type: ${actionType}`);
+  try {
+    const res = await fetch(`${process.env.WEB_APP_URL}/api/${actionType}`, {
+      method: "GET",
+      cache: "no-store",
+    });
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+    return res.json();
+  } catch (error) {
+    console.log(error);
   }
-  return res.json();
 }
 
 const Actions: React.FC<ActionsProps> = async ({ title, actionType, type }) => {
