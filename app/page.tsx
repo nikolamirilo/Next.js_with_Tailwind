@@ -9,7 +9,7 @@ const Footer = dynamic(() => import("@/components/Footer"));
 
 const Home: React.FC = async () => {
   return (
-    <div className="flex flex-col gap-32" id="home">
+    <div className="flex flex-col gap-16" id="home">
       <Navbar type="home" />
       <Hero />
       <About />

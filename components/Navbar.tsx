@@ -15,7 +15,7 @@ const Navbar: React.FC<NavbarProps> = ({ type }) => {
   return (
     <nav
       id="navbar"
-      className="bg-green-600 fixed top-0 w-full lg:flex lg:flex-row lg:items-center lg:justify-around grid grid-cols-5 content-center justify-items-start px-4 lg:px-16 z-20"
+      className="bg-green-600 fixed top-0 w-full lg:flex lg:flex-row lg:items-center lg:justify-around grid grid-cols-5 content-center justify-items-start px-2 lg:px-8 z-20"
     >
       <div
         id="main-info"
