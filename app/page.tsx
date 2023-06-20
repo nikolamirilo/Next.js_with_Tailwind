@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import React from "react";
 const Partners = dynamic(() => import("@/components/Partners"), { ssr: false });
 const About = dynamic(() => import("@/components/About"));
-const Actions = dynamic(() => import("@/components/Actions"));
+const Actions = dynamic(() => import("@/components/Actions"), { ssr: true });
 const Footer = dynamic(() => import("@/components/Footer"));
 
 const Home: React.FC = async () => {
