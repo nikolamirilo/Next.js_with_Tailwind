@@ -10,11 +10,7 @@ const Admin: React.FC = () => {
     <div id="admin" className="flex flex-col justify-center items-center">
       <Navbar />
       <AdminPanel>
-        <Actions
-          title="Sve Akcije prijavljene od korisnika"
-          actionType="actions"
-          type="admin"
-        />
+        <Actions title="Sve Akcije prijavljene od korisnika" actionType="actions" type="admin" />
       </AdminPanel>
       <Footer />
     </div>

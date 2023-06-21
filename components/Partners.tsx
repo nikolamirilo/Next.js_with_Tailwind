@@ -17,15 +17,13 @@ const Partners: React.FC = () => {
       id="partneri"
       className="flex flex-col py-20 px-0 gap-5 justify-center items-center md:w-full"
     >
-      <h1 className="text-3xl sm:text-4xl font-bold uppercase text-green-600">
-        Naši Partneri
-      </h1>
+      <h1 className="text-3xl sm:text-4xl font-bold uppercase text-green-600">Naši Partneri</h1>
       <div className="relative h-96 w-full lg:w-1/3 md:w-3/5 sm:w-4/5 m-0 flex justify-center items-center">
         <div
           id="left-arrow"
           className="absolute left-1 sm:left-0 z-5 text-green-600 cursor-pointer top-4/10"
           onClick={() => {
-            if (index === 0) {
+            if (index == 0) {
               setIndex(images.length - 1);
             } else {
               setIndex(index - 1);
@@ -51,7 +49,7 @@ const Partners: React.FC = () => {
           <BsArrowRightCircleFill
             size={35}
             onClick={() => {
-              if (index === images.length - 1) {
+              if (index == images.length - 1) {
                 setIndex(0);
               } else {
                 setIndex(index + 1);

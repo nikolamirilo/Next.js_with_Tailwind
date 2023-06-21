@@ -13,11 +13,13 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ children }) => {
     const passCode = document?.getElementById("passCode") as HTMLInputElement;
     if (passCode && passCode.value == "#fazon2023") {
       setIsAuthorized(true);
+    } else {
+      alert("Pogrešna šifra, pokušajte opet!");
     }
   };
   return (
-    <main className="min-h-screen py-12">
-      {isAuthorized === true ? children : <Modal handleSubmit={handleSubmit} />}
+    <main className="min-h-screen w-full py-8">
+      {isAuthorized == true ? children : <Modal handleSubmit={handleSubmit} />}
     </main>
   );
 };

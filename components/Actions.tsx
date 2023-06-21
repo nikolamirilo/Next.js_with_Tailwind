@@ -28,28 +28,39 @@ const Actions: React.FC<ActionsProps> = async ({ title, actionType, type }) => {
     return <div>Bla bla</div>;
   }
   const data = await getData(actionType);
+  const handleFilter = (item: any, idx: number) => {
+    if (type == "admin") {
+      return idx < 3;
+    } else {
+      return idx < 9;
+    }
+  };
+
+  //Create button on click setLoadedActions(loadedActions + 3)
   return (
     <div className="w-full" id="akcije">
-      <div className="mx-auto w-full max-w-2xl sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 flex flex-col items-center justify-center gap-20">
+      <div className="mx-auto w-full max-w-2xl p-4 sm:px-6 py-32 lg:max-w-7xl lg:px-8 flex flex-col items-center justify-center gap-16">
         <h1 className="text-3xl sm:text-4xl font-bold uppercase text-center text-green-600">
           {title}
         </h1>
         <div className="grid grid-cols-1 w-full gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">
           {data
-            ? data.map((item: any, idx: number) => {
-                return (
-                  <Card
-                    type={type}
-                    key={idx}
-                    _id={item._id}
-                    isPublic={item.isPublic}
-                    title={item.title}
-                    description={item.description}
-                    image={item.image}
-                    category={item.category}
-                  />
-                );
-              })
+            ? data
+                .filter((item: any, idx: number) => handleFilter(item, idx))
+                .map((item: any, idx: number) => {
+                  return (
+                    <Card
+                      type={type}
+                      key={idx}
+                      _id={item._id}
+                      isPublic={item.isPublic}
+                      title={item.title}
+                      description={item.description}
+                      image={item.image}
+                      category={item.category}
+                    />
+                  );
+                })
             : null}
         </div>
       </div>

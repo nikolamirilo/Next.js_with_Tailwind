@@ -57,7 +57,7 @@ const Navbar: React.FC<NavbarProps> = ({ type }) => {
               Početna
             </a>
           </li>
-          {type === "home" ? (
+          {type == "home" ? (
             <li className="text-white text-xl hover:font-semibold hover:underline-offset-2 transition ease-in-out delay-50 hover:scale-105 duration-150 dark:text-white cursor-pointer md:ml-5 lg:py-0 md:py-0 sm:pt-5">
               <a
                 onClick={() => {
@@ -69,7 +69,7 @@ const Navbar: React.FC<NavbarProps> = ({ type }) => {
               </a>
             </li>
           ) : null}
-          {type === "home" ? (
+          {type == "home" ? (
             <li className="text-white text-xl hover:font-semibold hover:underline-offset-2 transition ease-in-out delay-50 hover:scale-105 duration-150 dark:text-white cursor-pointer md:ml-5 lg:py-0 md:py-0 sm:pt-5">
               <a
                 onClick={() => {
@@ -81,7 +81,7 @@ const Navbar: React.FC<NavbarProps> = ({ type }) => {
               </a>
             </li>
           ) : null}
-          {type === "home" ? (
+          {type == "home" ? (
             <li className="text-white text-xl hover:font-semibold hover:underline-offset-2 transition ease-in-out delay-50 hover:scale-105 duration-150 dark:text-white cursor-pointer md:ml-5 lg:py-0 md:py-0 sm:pt-5">
               <a
                 onClick={() => {

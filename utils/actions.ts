@@ -18,7 +18,7 @@ export const getActions = async () => {
 export const getPublicActions = async () => {
   try {
     const allActions = await getActions();
-    const publicActions = await allActions.filter((item: any) => item.isPublic === true);
+    const publicActions = await allActions.filter((item: any) => item.isPublic == true);
     return publicActions;
   } catch (error) {
     console.log((error as Error).message);
@@ -54,7 +54,7 @@ export const getSingleAction = async (id: any) => {
   try {
     const allActions = await getActions();
     const singleAction: any = allActions?.find(
-      (singleAction: any) => singleAction._id.toString() === id
+      (singleAction: any) => singleAction._id.toString() == id
     );
     return singleAction;
   } catch (error) {
