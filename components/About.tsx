@@ -21,7 +21,7 @@ const About: React.FC = () => {
       id="o-nama"
     >
       <Image
-        src="/images/about.jfif"
+        src="/images/about.webp"
         alt="About"
         fill
         className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
