@@ -1,14 +1,14 @@
 import React from "react";
 import Card from "./Card";
+import { useMainContext } from "@/context/MainContext";
 interface ActionsProps {
   title: string;
   actionType: string;
   type?: string;
+  actionsNumber?: number | undefined;
 }
 
 async function getData(actionType: string) {
-  console.log(`Web App Url: ${process.env.WEB_APP_URL}`);
-  console.log(`Action type: ${actionType}`);
   try {
     const res = await fetch(`${process.env.WEB_APP_URL}/api/${actionType}`, {
       method: "GET",
@@ -23,21 +23,18 @@ async function getData(actionType: string) {
   }
 }
 
-const Actions: React.FC<ActionsProps> = async ({ title, actionType, type }) => {
+const Actions: React.FC<ActionsProps> = async ({
+  title,
+  actionType,
+  type,
+  actionsNumber,
+}) => {
   if (!title || !actionType) {
-    return <div>Bla bla</div>;
+    return <div>Loading...</div>;
   }
   const data = await getData(actionType);
-  const handleFilter = (item: any, idx: number) => {
-    if (type == "admin") {
-      return idx < 12;
-    } else {
-      return idx < 9;
-    }
-  };
 
   if (data?.length == 0) return null;
-
   return (
     <div className="w-full" id="akcije">
       <div className="mx-auto w-full max-w-2xl p-4 sm:px-6 py-32 lg:max-w-7xl lg:px-8 flex flex-col items-center justify-center gap-16">
@@ -47,7 +44,7 @@ const Actions: React.FC<ActionsProps> = async ({ title, actionType, type }) => {
         <div className="grid grid-cols-1 w-full gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">
           {data
             ? data
-                .filter((item: any, idx: number) => handleFilter(item, idx))
+                .filter((item: any, idx: number) => idx < actionsNumber!)
                 .sort((a: any, b: any) => {
                   return a.category - b.category;
                 })

@@ -20,6 +20,9 @@ module.exports = {
         'cover': 'cover',
         'contain': 'contain',
         '90%': '90%',
+      },
+      animation: {
+        'ping-slow': 'ping 2s linear infinite',
       }
     },
   },

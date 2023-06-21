@@ -20,7 +20,6 @@ const Footer: React.FC = () => {
           width={100}
           height={50}
         />
-        {/* <h2 className="text-white text-2xl font-bold">Projekat &quot;Fazon&quot;</h2> */}
       </div>
       <div className="flex flex-col items-center justify-center gap-6">
         <div
