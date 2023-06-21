@@ -30,13 +30,14 @@ const Actions: React.FC<ActionsProps> = async ({ title, actionType, type }) => {
   const data = await getData(actionType);
   const handleFilter = (item: any, idx: number) => {
     if (type == "admin") {
-      return idx < 3;
+      return idx < 12;
     } else {
       return idx < 9;
     }
   };
 
-  //Create button on click setLoadedActions(loadedActions + 3)
+  if (data?.length == 0) return null;
+
   return (
     <div className="w-full" id="akcije">
       <div className="mx-auto w-full max-w-2xl p-4 sm:px-6 py-32 lg:max-w-7xl lg:px-8 flex flex-col items-center justify-center gap-16">
@@ -47,6 +48,9 @@ const Actions: React.FC<ActionsProps> = async ({ title, actionType, type }) => {
           {data
             ? data
                 .filter((item: any, idx: number) => handleFilter(item, idx))
+                .sort((a: any, b: any) => {
+                  return a.category - b.category;
+                })
                 .map((item: any, idx: number) => {
                   return (
                     <Card

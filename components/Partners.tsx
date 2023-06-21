@@ -2,8 +2,8 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
-import eko_men from "../public/images/eko_men.png";
-import fon from "../public/images/fon.png";
+import eko_men from "../public/images/eko_men.webp";
+import fon from "../public/images/fon.webp";
 
 const Partners: React.FC = () => {
   const [index, setIndex] = useState(0);
@@ -17,7 +17,9 @@ const Partners: React.FC = () => {
       id="partneri"
       className="flex flex-col py-20 px-0 gap-5 justify-center items-center md:w-full"
     >
-      <h1 className="text-3xl sm:text-4xl font-bold uppercase text-green-600">Naši Partneri</h1>
+      <h1 className="text-3xl sm:text-4xl font-bold uppercase text-green-600">
+        Naši Partneri
+      </h1>
       <div className="relative h-96 w-full lg:w-1/3 md:w-3/5 sm:w-4/5 m-0 flex justify-center items-center">
         <div
           id="left-arrow"

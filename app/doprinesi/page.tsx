@@ -55,7 +55,7 @@ const Contribute: React.FC = () => {
     <div
       className="flex flex-col gap-32 bg-cover bg-left md:bg-center "
       id="contribute"
-      style={{ backgroundImage: `url(/images/background.webp)` }}
+      style={{ backgroundImage: `url(/images/contribute.webp)` }}
     >
       <Navbar />
       <div className="flex justify-center py-24 lg:py-8 px-2 sm:px-16 lg:px-52 pb-8">
@@ -63,12 +63,14 @@ const Contribute: React.FC = () => {
           <div className="text-center">
             <Image
               className="mx-auto"
-              src="https://png.pngtree.com/png-vector/20191005/ourmid/pngtree-mint-leaves-graphic-design-template-vector-isolated-png-image_1795026.jpg"
-              alt="Your Company"
+              src="/images/green_logo.png"
+              alt="Leafs"
               width={100}
               height={100}
             />
-            <h2 className="mt-6 text-2xl font-bold text-gray-900">Doprinesi našoj akciji</h2>
+            <h2 className="mt-6 text-2xl font-bold text-gray-900">
+              Doprinesi našoj akciji
+            </h2>
           </div>
 
           <form
@@ -99,7 +101,10 @@ const Contribute: React.FC = () => {
               </div>
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium leading-5 text-gray-700">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium leading-5 text-gray-700"
+              >
                 E-mail adresa
               </label>
               <div className="mt-1">
@@ -118,7 +123,10 @@ const Contribute: React.FC = () => {
               </div>
             </div>
             <div>
-              <label htmlFor="title" className="block text-sm font-medium leading-5 text-gray-700">
+              <label
+                htmlFor="title"
+                className="block text-sm font-medium leading-5 text-gray-700"
+              >
                 Naslov akcije:
               </label>
               <div className="mt-1">
@@ -193,7 +201,13 @@ const Contribute: React.FC = () => {
                     className="flex relative flex-col items-center justify-center bg-center bg-cover w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-white hover:border-green-500"
                   >
                     {data.image !== "" ? (
-                      <Image src={data.image} fill object-fit="cover" priority alt="Background" />
+                      <Image
+                        src={data.image}
+                        fill
+                        object-fit="cover"
+                        priority
+                        alt="Background"
+                      />
                     ) : null}
                     <div
                       className={`flex flex-col items-center justify-center pt-5 pb-6 ${
@@ -215,9 +229,12 @@ const Contribute: React.FC = () => {
                         />
                       </svg>
                       <p className="mt-2 text-sm text-gray-500">
-                        <span className="font-semibold">Click to upload</span> or drag and drop
+                        <span className="font-semibold">Click to upload</span>{" "}
+                        or drag and drop
                       </p>
-                      <p className="text-xs text-gray-500">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                      <p className="text-xs text-gray-500">
+                        SVG, PNG, JPG or GIF (MAX. 800x400px)
+                      </p>
                     </div>
                     <input
                       onChange={handleFileChange}

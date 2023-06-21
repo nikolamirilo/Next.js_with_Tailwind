@@ -22,9 +22,8 @@ const About: React.FC = () => {
     >
       <Image
         src="/images/about.jfif"
-        alt=""
+        alt="About"
         fill
-        object-fit="cover"
         className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
       />
       <div className="mx-auto max-w-7xl px-6 lg:px-8">

@@ -15,6 +15,14 @@ export const getActions = async () => {
     console.log((error as Error).message);
   }
 };
+export const deleteAllActions = async () => {
+  try {
+    const db = await clientConnection();
+    db.collection("akcije").deleteMany({});
+  } catch (error) {
+    console.log((error as Error).message);
+  }
+};
 export const getPublicActions = async () => {
   try {
     const allActions = await getActions();
