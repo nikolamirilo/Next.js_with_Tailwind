@@ -15,8 +15,8 @@ const Hero: React.FC = () => {
       <div className="h-fit py-4 sm:h-3/5 w-full bg-black/60 z-10">
         <div className="flex flex-col justify-center items-center h-full gap-4">
           <h1 className="text-3xl lg:text-5xl font-bold px-4 tracking-tight text-white md:text-4xl uppercase drop-shadow-xl text-center">
-            U FAZONU ZA ODRŽIVOST,
-            <span className="sm:block ml-2">PROMENIMO ZAJEDNO SVET!</span>
+            U FAZONU ZA ODRŽIVOST, <br />
+            PROMENIMO ZAJEDNO SVET!
           </h1>
           <p className="text-lg max-w-sm px-6 sm:max-w-xl text-center leading-8 text-white">
             Projekat &quot;Fazon&quot; je ekološki projekat koji se bavi

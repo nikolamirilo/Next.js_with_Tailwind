@@ -69,7 +69,7 @@ const Card: React.FC<CardProps> = ({
             >
               Kontakt
             </Link>
-            <div>
+            <div className="flex flex-row gap-2 justify-center items-center">
               <label htmlFor="#isPublic">Da li je javno?</label>
               <input
                 type="checkbox"
