@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "./Card";
-import LoadMoreButton from "./LoadMoreButton";
 interface ActionsProps {
   title: string;
   actionType: string;
@@ -39,7 +38,6 @@ const Actions: React.FC<ActionsProps> = async ({ title, actionType, type, action
         <div className="grid grid-cols-1 w-full gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">
           {data
             ? data
-                .filter((item: any, idx: number) => idx < actionsNumber!)
                 .sort((a: any, b: any) => {
                   return a.category - b.category;
                 })
@@ -60,7 +58,6 @@ const Actions: React.FC<ActionsProps> = async ({ title, actionType, type, action
             : null}
         </div>
       </div>
-      {data?.length > 6 ? <LoadMoreButton /> : null}
     </div>
   );
 };
