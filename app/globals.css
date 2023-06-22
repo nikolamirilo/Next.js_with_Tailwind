@@ -7,11 +7,12 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
   scroll-behavior: smooth;
-  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
-}
-a, button{
+  /* font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif !important; */
   font-family: Helvetica, sans-serif !important;
 }
+/* a, button{
+  font-family: Helvetica, sans-serif !important;
+} */
 
 @media (prefers-color-scheme: dark) {
   :root {
