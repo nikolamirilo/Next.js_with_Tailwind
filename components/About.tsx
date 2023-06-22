@@ -17,7 +17,7 @@ const About: React.FC = () => {
   ];
   return (
     <div
-      className="relative flex flex-col justify-center items-center isolate overflow-hidden bg-cover bg-center py-16 sm:py-16"
+      className="relative flex flex-col justify-center items-center isolate overflow-hidden bg-cover bg-center"
       id="o-nama"
     >
       <Image
@@ -26,7 +26,7 @@ const About: React.FC = () => {
         fill
         className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
       />
-      <div className="mx-auto max-w-7xl px-6 py-0 lg:py-16 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 py-32 lg:px-8">
         <div className="mx-auto lg:mx-0">
           <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
             O nama
