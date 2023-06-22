@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
   return (
     <div
       id="kontakt"
-      className="flex py-6 flex-col sm:px-36 lg:flex-row md:flex-col sm:flex-col justify-between items-center bg-green-600 w-full"
+      className="flex py-6 md:py-0 flex-col sm:px-36 lg:flex-row md:flex-col sm:flex-col justify-between items-center bg-green-600 w-full"
     >
       <div
         id="main-info"
@@ -22,10 +22,7 @@ const Footer: React.FC = () => {
         />
       </div>
       <div className="flex flex-col items-center justify-center gap-6">
-        <div
-          id="contact"
-          className="flex flex-row gap-4 justify-around items-center"
-        >
+        <div id="contact" className="flex flex-row gap-4 justify-around items-center">
           <Link href="/">
             <AiFillInstagram size={30} className="text-white" />
           </Link>
