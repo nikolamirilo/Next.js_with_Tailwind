@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
       />
       <div className="h-3/5 w-full bg-black/60 z-10">
         <div className="flex flex-col justify-center items-center h-full gap-4">
-          <h1 className="text-4xl font-bold px-4 tracking-tight text-white sm:text-5xl uppercase drop-shadow-xl text-center">
+          <h1 className="text-5xl font-bold px-4 tracking-tight text-white sm:text-5xl uppercase drop-shadow-xl text-center">
             U FAZONU ZA ODRŽIVOST,
             <span className="sm:block ml-2">PROMENIMO ZAJEDNO SVET!</span>
           </h1>
