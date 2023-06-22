@@ -50,6 +50,7 @@ const Actions: React.FC<ActionsProps> = async ({
                       type={type}
                       key={idx}
                       _id={item._id}
+                      email={item.email}
                       isPublic={item.isPublic}
                       title={item.title}
                       description={item.description}

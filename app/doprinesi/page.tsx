@@ -69,7 +69,9 @@ const Contribute: React.FC = () => {
               width={100}
               height={100}
             />
-            <h2 className="mt-6 text-2xl font-bold text-gray-900">Doprinesi našoj akciji</h2>
+            <h2 className="mt-6 text-2xl font-bold text-gray-900">
+              Doprinesi našoj akciji
+            </h2>
           </div>
 
           <form
@@ -100,7 +102,10 @@ const Contribute: React.FC = () => {
               </div>
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium leading-5 text-gray-700">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium leading-5 text-gray-700"
+              >
                 E-mail adresa
               </label>
               <div className="mt-1">
@@ -119,7 +124,10 @@ const Contribute: React.FC = () => {
               </div>
             </div>
             <div>
-              <label htmlFor="title" className="block text-sm font-medium leading-5 text-gray-700">
+              <label
+                htmlFor="title"
+                className="block text-sm font-medium leading-5 text-gray-700"
+              >
                 Naslov akcije:
               </label>
               <div className="mt-1">
@@ -194,7 +202,13 @@ const Contribute: React.FC = () => {
                     className="flex relative flex-col items-center justify-center bg-center bg-cover w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-white hover:border-green-500"
                   >
                     {data.image !== "" ? (
-                      <Image src={data.image} fill object-fit="cover" priority alt="Background" />
+                      <Image
+                        src={data.image}
+                        fill
+                        className="object-cover object-center"
+                        priority
+                        alt="Background"
+                      />
                     ) : null}
                     <div
                       className={`flex flex-col items-center justify-center pt-5 pb-6 ${
@@ -216,9 +230,12 @@ const Contribute: React.FC = () => {
                         />
                       </svg>
                       <p className="mt-2 text-sm text-gray-500">
-                        <span className="font-semibold">Click to upload</span> or drag and drop
+                        <span className="font-semibold">Click to upload</span>{" "}
+                        or drag and drop
                       </p>
-                      <p className="text-xs text-gray-500">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+                      <p className="text-xs text-gray-500">
+                        SVG, PNG, JPG or GIF (MAX. 800x400px)
+                      </p>
                     </div>
                     <input
                       onChange={handleFileChange}

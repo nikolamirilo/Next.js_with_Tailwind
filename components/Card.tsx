@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 interface CardProps {
@@ -10,6 +11,7 @@ interface CardProps {
   category: string;
   type?: string;
   isPublic: boolean;
+  email: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -18,6 +20,7 @@ const Card: React.FC<CardProps> = ({
   description,
   image,
   category,
+  email,
   type,
   isPublic,
 }) => {
@@ -57,38 +60,46 @@ const Card: React.FC<CardProps> = ({
         </span>
         {type == "admin" ? (
           <div
-            id="checkbox"
-            className="flex flex-row gap-2 w-full justify-end items-center"
+            id="admin-options"
+            className="flex flex-row gap-2 w-full justify-between items-center"
           >
-            <label htmlFor="#isPublic">Da li je javno?</label>
-            <input
-              type="checkbox"
-              id="isPublic"
-              className="cursor-pointer"
-              checked={isChecked}
-              onChange={async (e: any) => {
-                setIsChecked(e.target.checked);
-                try {
-                  const res = await fetch(
-                    `${process.env.WEB_APP_URL}/api/actions/update`,
-                    {
-                      method: "PUT",
-                      headers: {
-                        Accept: "application/json",
-                        "Content-Type": "application/json",
-                      },
-                      body: JSON.stringify({
-                        _id: _id,
-                        isPublic: !isChecked,
-                      }),
-                    }
-                  );
-                  console.log(res);
-                } catch (error) {
-                  console.log(error as Error);
-                }
-              }}
-            />
+            <Link
+              href={`mailto:${email}`}
+              className="text-green-600 underline text-lg"
+            >
+              Kontakt
+            </Link>
+            <div>
+              <label htmlFor="#isPublic">Da li je javno?</label>
+              <input
+                type="checkbox"
+                id="isPublic"
+                className="cursor-pointer"
+                checked={isChecked}
+                onChange={async (e: any) => {
+                  setIsChecked(e.target.checked);
+                  try {
+                    const res = await fetch(
+                      `${process.env.WEB_APP_URL}/api/actions/update`,
+                      {
+                        method: "PUT",
+                        headers: {
+                          Accept: "application/json",
+                          "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                          _id: _id,
+                          isPublic: !isChecked,
+                        }),
+                      }
+                    );
+                    console.log(res);
+                  } catch (error) {
+                    console.log(error as Error);
+                  }
+                }}
+              />
+            </div>
           </div>
         ) : null}
       </div>

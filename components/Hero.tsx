@@ -12,7 +12,7 @@ const Hero: React.FC = () => {
         alt="Background"
         className="object-cover object-center"
       />
-      <div className="h-3/5 w-full bg-black/60 z-10">
+      <div className="h-fit py-4 sm:h-3/5 w-full bg-black/60 z-10">
         <div className="flex flex-col justify-center items-center h-full gap-4">
           <h1 className="text-3xl lg:text-5xl font-bold px-4 tracking-tight text-white md:text-5xl uppercase drop-shadow-xl text-center">
             U FAZONU ZA ODRŽIVOST,
