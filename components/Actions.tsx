@@ -22,7 +22,12 @@ async function getData(actionType: string) {
   }
 }
 
-const Actions: React.FC<ActionsProps> = async ({ title, actionType, type, actionsNumber }) => {
+const Actions: React.FC<ActionsProps> = async ({
+  title,
+  actionType,
+  type,
+  actionsNumber,
+}) => {
   if (!title || !actionType) {
     return <div>Loading...</div>;
   }
@@ -38,9 +43,7 @@ const Actions: React.FC<ActionsProps> = async ({ title, actionType, type, action
         <div className="grid grid-cols-1 w-full gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-x-8">
           {data
             ? data
-                .sort((a: any, b: any) => {
-                  return a.category - b.category;
-                })
+                .sort((a: any, b: any) => a.category.localeCompare(b.category))
                 .map((item: any, idx: number) => {
                   return (
                     <Card
