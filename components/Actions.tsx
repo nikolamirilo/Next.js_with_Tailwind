@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./Card";
-import { useMainContext } from "@/context/MainContext";
+import LoadMoreButton from "./LoadMoreButton";
 interface ActionsProps {
   title: string;
   actionType: string;
@@ -23,12 +23,7 @@ async function getData(actionType: string) {
   }
 }
 
-const Actions: React.FC<ActionsProps> = async ({
-  title,
-  actionType,
-  type,
-  actionsNumber,
-}) => {
+const Actions: React.FC<ActionsProps> = async ({ title, actionType, type, actionsNumber }) => {
   if (!title || !actionType) {
     return <div>Loading...</div>;
   }
@@ -65,6 +60,7 @@ const Actions: React.FC<ActionsProps> = async ({
             : null}
         </div>
       </div>
+      {data?.length > 6 ? <LoadMoreButton /> : null}
     </div>
   );
 };

@@ -12,11 +12,9 @@ interface MainContextProps {
 }
 
 const MainContextProvider: React.FC<MainContextProps> = ({ children }) => {
-  const [loadActions, setLoadActions] = useState<any>(3);
+  const [loadActions, setLoadActions] = useState<any>(5);
   return (
-    <MainContext.Provider value={{ loadActions, setLoadActions }}>
-      {children}
-    </MainContext.Provider>
+    <MainContext.Provider value={{ loadActions, setLoadActions }}>{children}</MainContext.Provider>
   );
 };
 export default MainContextProvider;

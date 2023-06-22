@@ -1,7 +1,6 @@
 "use client";
 import Actions from "@/components/Actions";
 import Hero from "@/components/Hero";
-import LoadMoreButton from "@/components/LoadMoreButton";
 import Navbar from "@/components/Navbar";
 import { useMainContext } from "@/context/MainContext";
 import dynamic from "next/dynamic";
@@ -22,7 +21,6 @@ const Home: React.FC = async () => {
         actionType="actions/public"
         actionsNumber={loadActions}
       />
-      <LoadMoreButton />
       <Partners />
       <Footer />
     </div>
