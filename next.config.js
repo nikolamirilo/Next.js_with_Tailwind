@@ -6,6 +6,7 @@ module.exports = {
   env: {
     WEB_APP_URL: process.env.WEB_APP_URL,
   },
+  compress: true,
   async rewrites() {
     return [
       {
