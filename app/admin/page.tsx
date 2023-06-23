@@ -3,7 +3,7 @@ import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
 import dynamic from "next/dynamic";
 import React from "react";
-const Footer = dynamic(() => import("@/components/Footer"));
+const Footer = dynamic(() => import("@/components/Footer"), { ssr: false });
 const Actions = dynamic(() => import("@/components/Actions"), {
   loading: () => <Loader />,
 });

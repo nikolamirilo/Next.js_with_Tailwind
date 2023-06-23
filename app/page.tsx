@@ -4,8 +4,8 @@ import Navbar from "@/components/Navbar";
 import dynamic from "next/dynamic";
 import React from "react";
 const Partners = dynamic(() => import("@/components/Partners"), { ssr: false });
-const About = dynamic(() => import("@/components/About"));
-const Footer = dynamic(() => import("@/components/Footer"));
+const About = dynamic(() => import("@/components/About"), { ssr: false });
+const Footer = dynamic(() => import("@/components/Footer"), { ssr: false });
 const Actions = dynamic(() => import("@/components/Actions"), {
   loading: () => <Loader />,
 });

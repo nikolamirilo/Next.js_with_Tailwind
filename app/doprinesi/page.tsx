@@ -4,7 +4,7 @@ import { Actions } from "@/types/interfaces";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import React, { useReducer, useState } from "react";
-const Footer = dynamic(() => import("@/components/Footer"));
+const Footer = dynamic(() => import("@/components/Footer"), { ssr: false });
 
 const Contribute: React.FC = () => {
   const [selectedFile, setSelectedFile] = useState(null);
