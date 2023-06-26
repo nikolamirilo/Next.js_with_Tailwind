@@ -3,6 +3,7 @@ import Loader from "@/components/Loader";
 import Navbar from "@/components/Navbar";
 import dynamic from "next/dynamic";
 import React from "react";
+import data from "../data.json";
 const Partners = dynamic(() => import("@/components/Partners"), { ssr: false });
 const About = dynamic(() => import("@/components/About"), { ssr: false });
 const Footer = dynamic(() => import("@/components/Footer"), { ssr: false });
@@ -16,7 +17,7 @@ const Home: React.FC = async () => {
       <Navbar type="home" />
       <Hero />
       <About />
-      <Actions title="Akcije Projekta Fazon" actionType="actions/public" />
+      <Actions title={data?.akcije.naslov} actionType="actions/public" />
       <Partners />
       <Footer />
     </div>

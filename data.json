@@ -1,0 +1,25 @@
+{
+   "hero_sekcija" :{
+    "naslov": "U FAZONU ZA ODRŽIVOST, PROMENIMO ZAJEDNO SVET!",
+    "paragraf": "Projekat Fazon je ekološki projekat koji se bavi povećanjem svesti ljudi o ekologiji putem inovativnih i interaktivnih metoda, kako bi se inspirisali i motivisali pojedinci da preduzmu konkretnu akciju za očuvanje životne sredine.",
+    "dugme": "Šta je projekat Fazon?"
+   },
+   "o_nama": {
+    "naslov": "O Nama",
+    "paragraf_1": "Projekat Fazon predstavlja inspirativnu inicijativu sa fokusom na ekologiju, koja ima za cilj podizanje svesti i angažovanje ljudi u očuvanju našeg dragocenog okruženja. Sa sve većim izazovima koje ljudska aktivnost postavlja pred planetu, Fazon je osmišljen kao snažan odgovor na te probleme, pružajući jedinstven i inovativan pristup održivosti. Naša misija je duboko ukorenjena u razumevanju da je svako pojedinačno delovanje važno za očuvanje ekosistema. Projekat Fazon se zalaže za promovisanje ekološke svesti putem edukacije, inspirativnih kampanja i praktičnih akcija koje imaju trajan uticaj na naše životno okruženje. Kroz raznolike aktivnosti, Fazon podstiče ljude da reevaluiraju svoje navike i preduzmu konkretne korake ka održivom načinu života.",
+    "paragraf_2": "Mi smo pokret koji okuplja ljude širom sveta, spajajući ih u zajedničkom cilju zaštite naše planete. Verujemo da je zajednička akcija ključna za očuvanje ekološke ravnoteže i stvaranje održive budućnosti za sve nas.",
+  "statistika":[
+    { "naslov": "Iteracija", "vrednost": "5" },
+    { "naslov": "Učesnika", "vrednost": "100+" },
+    { "naslov": "Sakupljenog đubreta", "vrednost": "5000+" },
+    { "naslov": "Provedenih sati u radu", "vrednost": "10000+" }
+  ]
+   },
+   "akcije":{
+    "naslov": "AKCIJE PROJEKTA FAZON"
+   },
+   "partneri":{
+    "naslov": "NAŠI PARTNERI"
+   }
+
+}
